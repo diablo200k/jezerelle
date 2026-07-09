@@ -4,2528 +4,757 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="pageTitle">Flower Bubble — Fleuriste, 14e Paris</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Work+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   FLOWER BUBBLE — Design Luxe & Animations Premium
-   ============================================================ */
-
-/* -------- Variables -------- */
 :root {
   --cream: #FFF8F0;
-  --cream-2: #FFEFE3;
   --marigold: #F5C542;
-  --marigold-deep: #DBA329;
   --terracotta: #E85D75;
   --terracotta-deep: #C94058;
   --sage: #7AE0B0;
-  --blush: #FFB8D0;
-  --lavender: #C8A8E9;
   --gold: #F0C050;
-  --gold-light: rgba(240, 192, 80, 0.15);
-
   --wine: #1A0A12;
-  --wine-soft: #3A1A2E;
   --paper: #FFFFFF;
-
-  --line: rgba(232, 93, 117, 0.12);
-
-  /* Premium dark background */
-  --bg: radial-gradient(1600px 1000px at 30% 10%, rgba(232, 93, 117, 0.12), transparent 60%),
-        radial-gradient(1000px 800px at 80% 30%, rgba(122, 224, 176, 0.10), transparent 55%),
-        radial-gradient(800px 600px at 50% 80%, rgba(200, 168, 233, 0.08), transparent 50%),
-        linear-gradient(160deg, #0A0410 0%, #12081E 40%, #0D0618 100%);
+  --bg: radial-gradient(1600px 1000px at 30% 10%, rgba(232,93,117,0.12), transparent 60%), radial-gradient(1000px 800px at 80% 30%, rgba(122,224,176,0.1), transparent 55%), linear-gradient(160deg, #0A0410 0%, #12081E 40%, #0D0618 100%);
   --text: #FDF0F5;
-  --text-muted: rgba(253, 240, 245, 0.55);
-  --text-muted-2: rgba(253, 240, 245, 0.75);
-  --surface: rgba(255, 255, 255, 0.05);
-  --surface-2: rgba(255, 255, 255, 0.08);
-  --surface-3: rgba(255, 255, 255, 0.04);
-  --surface-invert: #120615;
-  --header-bg: rgba(10, 4, 16, 0.60);
-  --header-line: rgba(232, 93, 117, 0.15);
-
-  --glow-pink: rgba(232, 93, 117, 0.50);
-  --glow-mint: rgba(122, 224, 176, 0.50);
-  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.20);
-  --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.30);
-  --shadow-lg: 0 24px 70px rgba(0, 0, 0, 0.40);
-  --shadow-xl: 0 40px 100px rgba(0, 0, 0, 0.50);
-
-  --radius-sm: 8px;
+  --text-muted: rgba(253,240,245,0.55);
+  --text-muted-2: rgba(253,240,245,0.75);
+  --surface: rgba(255,255,255,0.05);
+  --surface-2: rgba(255,255,255,0.08);
+  --surface-3: rgba(255,255,255,0.04);
+  --header-bg: rgba(10,4,16,0.6);
+  --header-line: rgba(232,93,117,0.15);
+  --shadow-md: 0 12px 40px rgba(0,0,0,0.3);
+  --shadow-lg: 0 24px 70px rgba(0,0,0,0.4);
+  --shadow-xl: 0 40px 100px rgba(0,0,0,0.5);
   --radius-md: 14px;
   --radius-lg: 20px;
-  --radius-xl: 28px;
-
-  --transition-fast: 0.2s cubic-bezier(0.22, 1, 0.36, 1);
-  --transition-base: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-  --transition-slow: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-
+  --transition-fast: 0.2s cubic-bezier(0.22,1,0.36,1);
+  --transition-base: 0.35s cubic-bezier(0.22,1,0.36,1);
+  --transition-slow: 0.6s cubic-bezier(0.22,1,0.36,1);
   --font-serif: 'Fraunces', serif;
   --font-sans: 'Work Sans', sans-serif;
   --font-mono: 'DM Mono', monospace;
   --font-display: 'Playfair Display', serif;
 }
-
-/* Light theme */
 :root:not(.theme-dark) {
-  --bg: radial-gradient(1600px 1000px at 30% 10%, rgba(232, 93, 117, 0.08), transparent 60%),
-        radial-gradient(1000px 800px at 80% 30%, rgba(122, 224, 176, 0.07), transparent 55%),
-        linear-gradient(160deg, #FFF5F0 0%, #FFEFE8 50%, #FFF8F5 100%);
+  --bg: linear-gradient(160deg, #FFF5F0, #FFEFE8 50%, #FFF8F5);
   --text: #1A0A12;
-  --text-muted: rgba(26, 10, 18, 0.50);
-  --text-muted-2: rgba(26, 10, 18, 0.70);
-  --surface: rgba(26, 10, 18, 0.04);
-  --surface-2: rgba(26, 10, 18, 0.06);
-  --surface-3: rgba(26, 10, 18, 0.02);
-  --header-bg: rgba(255, 248, 240, 0.72);
-  --header-line: rgba(232, 93, 117, 0.12);
-  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 24px 70px rgba(0, 0, 0, 0.12);
-  --shadow-xl: 0 40px 100px rgba(0, 0, 0, 0.15);
+  --text-muted: rgba(26,10,18,0.5);
+  --text-muted-2: rgba(26,10,18,0.7);
+  --surface: rgba(26,10,18,0.04);
+  --surface-2: rgba(26,10,18,0.06);
+  --surface-3: rgba(26,10,18,0.02);
+  --header-bg: rgba(255,248,240,0.72);
+  --header-line: rgba(232,93,117,0.12);
 }
-
 .theme-dark {
-  --bg: radial-gradient(1600px 1000px at 30% 10%, rgba(232, 93, 117, 0.12), transparent 60%),
-        radial-gradient(1000px 800px at 80% 30%, rgba(122, 224, 176, 0.10), transparent 55%),
-        radial-gradient(800px 600px at 50% 80%, rgba(200, 168, 233, 0.08), transparent 50%),
-        linear-gradient(160deg, #0A0410 0%, #12081E 40%, #0D0618 100%);
+  --bg: radial-gradient(1600px 1000px at 30% 10%, rgba(232,93,117,0.12), transparent 60%), radial-gradient(1000px 800px at 80% 30%, rgba(122,224,176,0.1), transparent 55%), linear-gradient(160deg, #0A0410, #12081E 40%, #0D0618);
   --text: #FDF0F5;
-  --text-muted: rgba(253, 240, 245, 0.55);
-  --text-muted-2: rgba(253, 240, 245, 0.75);
-  --surface: rgba(255, 255, 255, 0.05);
-  --surface-2: rgba(255, 255, 255, 0.08);
-  --surface-3: rgba(255, 255, 255, 0.04);
-  --header-bg: rgba(10, 4, 16, 0.65);
-  --header-line: rgba(232, 93, 117, 0.15);
+  --text-muted: rgba(253,240,245,0.55);
+  --text-muted-2: rgba(253,240,245,0.75);
+  --surface: rgba(255,255,255,0.05);
+  --surface-2: rgba(255,255,255,0.08);
+  --surface-3: rgba(255,255,255,0.04);
+  --header-bg: rgba(10,4,16,0.65);
 }
-
-/* -------- Reset & Base -------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-}
-
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--font-sans);
-  font-weight: 400;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  transition: background var(--transition-slow), color var(--transition-slow);
+  background: var(--bg); color: var(--text); font-family: var(--font-sans);
+  font-weight: 400; line-height: 1.65; -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; transition: background var(--transition-slow), color var(--transition-slow);
 }
-
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
-
-h1, h2, h3, h4 {
-  font-family: var(--font-serif);
-  font-weight: 600;
-  color: var(--text);
-  line-height: 1.08;
-  letter-spacing: -0.01em;
-}
-
-/* -------- Scrollbar -------- */
+h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; color: var(--text); line-height: 1.08; letter-spacing: -0.01em; }
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--terracotta); border-radius: 9px; }
-::-webkit-scrollbar-thumb:hover { background: var(--terracotta-deep); }
 
-/* -------- Loading Screen -------- */
-.loader {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  background: var(--bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 24px;
-  transition: opacity 0.8s ease, visibility 0.8s ease;
-  pointer-events: none;
-}
-.loader.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-.loader-flower {
-  width: 48px;
-  height: 48px;
-  position: relative;
-  animation: loaderSpin 1.8s ease-in-out infinite;
-}
-.loader-flower::before,
-.loader-flower::after {
-  content: "🌸";
-  position: absolute;
-  font-size: 28px;
-  animation: loaderBounce 1.2s ease-in-out infinite alternate;
-}
-.loader-flower::before { left: -30px; animation-delay: -0.6s; }
-.loader-flower::after { right: -30px; animation-delay: 0s; }
-.loader-bar {
-  width: 180px;
-  height: 2px;
-  background: var(--header-line);
-  border-radius: 9px;
-  overflow: hidden;
-}
-.loader-bar-fill {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, var(--terracotta), var(--marigold), var(--sage));
-  animation: loaderFill 1.6s ease-in-out forwards;
-}
-@keyframes loaderSpin {
-  0%, 100% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.1); }
-}
-@keyframes loaderBounce {
-  0% { transform: translateY(0) scale(1); opacity: 0.6; }
-  100% { transform: translateY(-16px) scale(1.2); opacity: 1; }
-}
-@keyframes loaderFill {
-  0% { width: 0%; }
-  100% { width: 100%; }
+/* LOADER */
+.loader { position: fixed; inset: 0; z-index: 99999; background: var(--bg); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 24px; transition: opacity .8s, visibility .8s; pointer-events: none; }
+.loader.hidden { opacity: 0; visibility: hidden; }
+.loader-spin { width: 48px; height: 48px; border: 3px solid var(--header-line); border-top-color: var(--terracotta); border-radius: 50%; animation: spin 1s linear infinite; }
+.loader-bar { width: 180px; height: 2px; background: var(--header-line); border-radius: 9px; overflow: hidden; }
+.loader-fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--terracotta), var(--marigold), var(--sage)); animation: fill 1.6s forwards; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes fill { to { width: 100%; } }
+
+/* SCROLL PROGRESS */
+.scroll-bar { position: fixed; top: 0; left: 0; width: 100%; height: 2px; z-index: 1000; pointer-events: none; }
+.scroll-fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--terracotta), var(--marigold), var(--sage)); transition: width .1s; }
+
+/* CURSOR */
+.cursor-r, .cursor-d { position: fixed; top: 0; left: 0; z-index: 99999; pointer-events: none; will-change: transform; }
+.cursor-r { width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%; border: 1.5px solid rgba(232,93,117,0.5); background: rgba(232,93,117,0.06); opacity: .9; transition: width .35s, height .35s, border-color .35s; mix-blend-mode: difference; }
+.cursor-d { width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--marigold); box-shadow: 0 0 8px rgba(240,192,80,0.4); opacity: .95; transition: transform .12s; }
+body.ch .cursor-r { width: 64px; height: 64px; margin: -32px 0 0 -32px; border-color: var(--marigold); background: rgba(240,192,80,0.1); }
+body.ch .cursor-d { transform: scale(1.6); }
+
+/* PARTICLES */
+.petals { position: fixed; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+.petal { position: absolute; font-size: 18px; opacity: 0; animation: fall linear infinite; user-select: none; }
+@keyframes fall {
+  0% { transform: translateY(-60px) rotate(0deg); opacity: 0; }
+  10% { opacity: .6; }
+  90% { opacity: .3; }
+  100% { transform: translateY(calc(100vh + 60px)) rotate(720deg); opacity: 0; }
 }
 
-/* -------- Scroll Progress Indicator -------- */
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  z-index: 1000;
-  background: transparent;
-  pointer-events: none;
-}
-.scroll-progress-bar {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, var(--terracotta), var(--marigold), var(--sage), var(--lavender));
-  transition: width 0.1s linear;
-  border-radius: 0 2px 2px 0;
-}
+/* GRAIN */
+.grain { position: fixed; inset: 0; z-index: 2; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E"); opacity: .1; mix-blend-mode: overlay; }
+.theme-dark .grain { opacity: .08; mix-blend-mode: screen; }
 
-/* -------- Custom Cursor -------- */
-.cursor-ring,
-.cursor-dot {
-  position: fixed;
-  top: 0; left: 0;
-  z-index: 99999;
-  pointer-events: none;
-  transform: translate3d(-100px, -100px, 0);
-  will-change: transform;
-}
-.cursor-ring {
-  width: 40px; height: 40px;
-  margin-left: -20px; margin-top: -20px;
-  border-radius: 999px;
-  border: 1.5px solid rgba(232, 93, 117, 0.50);
-  background: rgba(232, 93, 117, 0.06);
-  box-shadow: 0 0 12px rgba(232, 93, 117, 0.08);
-  opacity: 0.9;
-  transition: width var(--transition-base), height var(--transition-base),
-              opacity var(--transition-base), border-color var(--transition-base),
-              background var(--transition-base), transform 0.08s ease;
-  mix-blend-mode: difference;
-}
-.cursor-dot {
-  width: 6px; height: 6px;
-  margin-left: -3px; margin-top: -3px;
-  border-radius: 50%;
-  background: var(--marigold);
-  box-shadow: 0 0 8px rgba(240, 192, 80, 0.40);
-  opacity: 0.95;
-  transition: transform 0.08s ease, opacity var(--transition-fast);
-}
-body.cursor-hover .cursor-ring {
-  width: 64px; height: 64px;
-  margin-left: -32px; margin-top: -32px;
-  opacity: 1;
-  border-color: var(--marigold);
-  background: rgba(240, 192, 80, 0.10);
-  box-shadow: 0 0 20px rgba(240, 192, 80, 0.15);
-}
-body.cursor-hover .cursor-dot {
-  transform: scale(1.6);
-}
+/* WRAP */
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 768px) { .wrap { padding: 0 20px; } }
 
-/* -------- Floating Particles (Pétales) -------- */
-.particles-container {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  overflow: hidden;
-}
-.petal {
-  position: absolute;
-  font-size: 18px;
-  opacity: 0;
-  animation: petalFall linear infinite;
-  user-select: none;
-}
-@keyframes petalFall {
-  0% {
-    transform: translateY(-60px) rotate(0deg) translateX(0);
-    opacity: 0;
-  }
-  10% { opacity: 0.6; }
-  90% { opacity: 0.3; }
-  100% {
-    transform: translateY(calc(100vh + 60px)) rotate(720deg) translateX(120px);
-    opacity: 0;
-  }
-}
+/* EYEBROW */
+.eyebrow { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .16em; font-size: .7rem; color: var(--terracotta); font-weight: 500; display: inline-block; }
+.eyebrow::after { content: ""; display: inline-block; width: 24px; height: 1px; background: var(--terracotta); margin-left: 10px; vertical-align: middle; opacity: .5; }
 
-/* -------- Grain Overlay -------- */
-.grain {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-  background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.75%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22200%22 height=%22200%22 filter=%22url(%23n)%22 opacity=%220.18%22/%3E%3C/svg%3E');
-  opacity: 0.10;
-  mix-blend-mode: overlay;
-}
-.theme-dark .grain { opacity: 0.08; mix-blend-mode: screen; }
-
-/* -------- Utility Classes -------- */
-.wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-@media (max-width: 768px) {
-  .wrap { padding: 0 20px; }
-}
-
-.eyebrow {
-  font-family: var(--font-mono);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.70rem;
-  color: var(--terracotta);
-  font-weight: 500;
-  display: inline-block;
-  position: relative;
-}
-.eyebrow::after {
-  content: "";
-  display: inline-block;
-  width: 24px;
-  height: 1px;
-  background: var(--terracotta);
-  margin-left: 10px;
-  vertical-align: middle;
-  opacity: 0.5;
-}
-
-.squiggle {
-  width: 56px; height: 12px;
-}
-
-/* -------- Buttons -------- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 32px;
-  border-radius: 100px;
-  font-weight: 500;
-  font-size: 0.92rem;
-  font-family: var(--font-sans);
-  cursor: pointer;
-  border: none;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
-              background var(--transition-fast), color var(--transition-fast),
-              border-color var(--transition-fast);
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%);
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
-  pointer-events: none;
-}
+/* BUTTONS */
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; border-radius: 100px; font-weight: 500; font-size: .92rem; font-family: var(--font-sans); cursor: pointer; border: none; position: relative; overflow: hidden; transition: transform var(--transition-fast), box-shadow var(--transition-fast); }
+.btn::before { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.15) 50%, transparent 70%); transform: translateX(-100%); transition: transform .6s; pointer-events: none; }
 .btn:hover::before { transform: translateX(100%); }
-.btn-primary {
-  background: linear-gradient(135deg, var(--terracotta), var(--terracotta-deep));
-  color: var(--paper);
-  box-shadow: 0 8px 28px rgba(232, 93, 117, 0.35);
-}
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 40px rgba(232, 93, 117, 0.45);
-}
-.btn-primary:active { transform: translateY(-1px); }
-.btn-ghost {
-  background: transparent;
-  color: var(--text);
-  border: 1.5px solid var(--header-line);
-  backdrop-filter: blur(4px);
-}
-.btn-ghost:hover {
-  background: var(--surface-2);
-  border-color: var(--terracotta);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-sm);
-}
-.btn-gold {
-  background: linear-gradient(135deg, var(--gold), var(--marigold-deep));
-  color: var(--wine);
-  box-shadow: 0 8px 28px rgba(240, 192, 80, 0.30);
-}
-.btn-gold:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 40px rgba(240, 192, 80, 0.40);
-}
+.btn-p { background: linear-gradient(135deg, var(--terracotta), var(--terracotta-deep)); color: var(--paper); box-shadow: 0 8px 28px rgba(232,93,117,.35); }
+.btn-p:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(232,93,117,.45); }
+.btn-g { background: transparent; color: var(--text); border: 1.5px solid var(--header-line); backdrop-filter: blur(4px); }
+.btn-g:hover { background: var(--surface-2); border-color: var(--terracotta); transform: translateY(-3px); }
 
-/* ============================================================
-   HEADER — Premium Design
-   ============================================================ */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: var(--header-bg);
-  backdrop-filter: blur(20px) saturate(1.2);
-  -webkit-backdrop-filter: blur(20px) saturate(1.2);
-  border-bottom: 1px solid var(--header-line);
-  transition: background var(--transition-base), border-color var(--transition-base),
-              box-shadow var(--transition-base);
-}
-header.scrolled {
-  background: var(--header-bg);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-  border-color: transparent;
-}
+/* HEADER */
+header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--header-bg); backdrop-filter: blur(20px) saturate(1.2); border-bottom: 1px solid var(--header-line); transition: background var(--transition-base), box-shadow var(--transition-base); }
+header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.15); }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 72px; max-width: 1200px; margin: 0 auto; }
+.brand { display: flex; align-items: center; gap: 14px; z-index: 2; }
+.brand-m { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, var(--terracotta), var(--marigold)); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); color: var(--paper); font-weight: 700; font-size: 1rem; box-shadow: 0 0 20px rgba(232,93,117,.3); transition: transform var(--transition-base); }
+.brand:hover .brand-m { transform: rotate(-10deg) scale(1.08); }
+.brand-t { display: flex; flex-direction: column; }
+.brand-n { font-family: var(--font-serif); font-weight: 700; font-size: 1.2rem; letter-spacing: -.02em; line-height: 1.1; background: linear-gradient(135deg, var(--text), var(--terracotta)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.brand-s { font-size: .65rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .12em; color: var(--text-muted); }
+.nav-l { display: flex; align-items: center; gap: 6px; list-style: none; }
+.nav-l a { position: relative; padding: 8px 18px; font-size: .85rem; font-weight: 500; color: var(--text-muted-2); border-radius: 100px; transition: color var(--transition-fast), background var(--transition-fast); }
+.nav-l a:hover, .nav-l a.on { color: var(--text); background: var(--surface-2); }
+.nav-l a::before { content: ""; position: absolute; bottom: 4px; left: 50%; width: 0; height: 2px; background: var(--terracotta); border-radius: 2px; transition: width var(--transition-base); transform: translateX(-50%); }
+.nav-l a:hover::before, .nav-l a.on::before { width: 60%; }
+.hr { display: flex; align-items: center; gap: 12px; }
+.hc { display: flex; align-items: center; gap: 8px; }
+.tb { appearance: none; border: 1px solid var(--header-line); background: var(--surface); color: var(--text-muted-2); border-radius: 999px; padding: 8px 14px; font-size: .78rem; cursor: pointer; font-weight: 600; line-height: 1; transition: transform var(--transition-fast), background var(--transition-fast); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .04em; }
+.tb:hover { transform: translateY(-2px); background: var(--surface-2); border-color: var(--terracotta); color: var(--text); }
+.ls { display: flex; gap: 4px; background: var(--surface); border-radius: 999px; padding: 3px; border: 1px solid var(--header-line); }
+.lb { appearance: none; border: none; background: transparent; color: var(--text-muted-2); border-radius: 999px; padding: 6px 10px; font-size: .7rem; cursor: pointer; font-weight: 700; transition: all var(--transition-fast); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .04em; }
+.lb:hover { color: var(--text); background: var(--surface-2); }
+.lb[aria-current="page"] { background: var(--terracotta); color: var(--paper); box-shadow: 0 4px 12px rgba(232,93,117,.3); }
+.cta-h { background: linear-gradient(135deg, var(--terracotta), var(--terracotta-deep)); color: var(--paper) !important; padding: 10px 22px; border-radius: 999px; font-size: .84rem; font-weight: 600; white-space: nowrap; box-shadow: 0 4px 16px rgba(232,93,117,.3); display: flex; align-items: center; gap: 8px; transition: transform var(--transition-fast), box-shadow var(--transition-fast); }
+.cta-h:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,93,117,.4); }
+.nt { display: none; background: none; border: none; cursor: pointer; width: 28px; height: 22px; position: relative; z-index: 10; flex-direction: column; justify-content: space-between; padding: 0; }
+.nt span { display: block; width: 100%; height: 2px; background: var(--text); border-radius: 2px; transition: all var(--transition-base); transform-origin: center; }
+.nt.on span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+.nt.on span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nt.on span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
 
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  height: 72px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+/* KEYFRAMES */
+@keyframes pulse { 50% { box-shadow: 0 0 0 10px rgba(122,224,176,.05); } }
+@keyframes float { 50% { transform: translateY(-10px); } }
+@keyframes fu { to { opacity: 1; transform: translateY(0); } }
+@keyframes fs { to { opacity: 1; transform: scale(1); } }
+@keyframes sc { to { transform: translateX(-50%); } }
+@keyframes wp { 50% { box-shadow: 0 8px 40px rgba(37,211,102,.55); } }
 
-/* Brand */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  position: relative;
-  z-index: 2;
-}
-.brand-mark {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--terracotta), var(--marigold));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-serif);
-  color: var(--paper);
-  font-weight: 700;
-  font-size: 1rem;
-  box-shadow: 0 0 20px rgba(232, 93, 117, 0.30);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-.brand:hover .brand-mark {
-  transform: rotate(-10deg) scale(1.08);
-  box-shadow: 0 0 30px rgba(232, 93, 117, 0.45);
-}
-.brand-text {
-  display: flex;
-  flex-direction: column;
-}
-.brand-name {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  background: linear-gradient(135deg, var(--text), var(--terracotta));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.brand-sub {
-  font-size: 0.65rem;
-  font-family: var(--font-mono);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-  -webkit-text-fill-color: var(--text-muted);
-}
+/* HERO */
+.hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 100px 0 60px; overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: -200px -100px auto -100px; height: 700px; background: radial-gradient(ellipse at 30% 20%, rgba(232,93,117,.2), transparent 60%), radial-gradient(ellipse at 70% 40%, rgba(122,224,176,.12), transparent 50%); filter: blur(40px); opacity: .8; z-index: 0; pointer-events: none; }
+.hg { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 40px; position: relative; z-index: 2; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.hc2 { padding: 20px 0; z-index: 2; }
+.hc2 .eyebrow { margin-bottom: 20px; animation: fu .8s forwards; opacity: 0; }
+.hc2 h1 { font-size: clamp(2.8rem, 5.5vw, 4.5rem); letter-spacing: -.02em; margin-bottom: 24px; line-height: 1.05; animation: fu .8s .15s forwards; opacity: 0; }
+.hc2 h1 .h { font-style: italic; background: linear-gradient(135deg, var(--terracotta), var(--marigold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 500; }
+.hc2 p { max-width: 480px; font-size: 1.05rem; color: var(--text-muted-2); margin-bottom: 36px; line-height: 1.7; animation: fu .8s .3s forwards; opacity: 0; }
+.ha { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; animation: fu .8s .45s forwards; opacity: 0; }
+.hv { position: relative; height: 600px; animation: fs 1s .3s forwards; opacity: 0; }
+.hp { position: absolute; right: -20px; top: 40px; width: 440px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xl); transform: rotate(1.8deg); border: 2px solid var(--surface-2); transition: transform var(--transition-slow); }
+.hp:hover { transform: rotate(0) scale(1.01); }
+.hp img { width: 100%; height: 580px; object-fit: cover; transition: transform var(--transition-slow); }
+.hp:hover img { transform: scale(1.03); }
+.hb { position: absolute; width: 320px; height: 320px; background: linear-gradient(135deg, var(--marigold), var(--terracotta)); border-radius: 44% 56% 62% 38% / 42% 40% 60% 58%; left: -40px; top: 80px; opacity: .3; filter: blur(2px); z-index: -1; }
+.ht2 { position: absolute; left: -20px; bottom: 60px; background: var(--surface-2); backdrop-filter: blur(16px); border: 1px solid var(--header-line); padding: 18px 24px; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); z-index: 3; display: flex; gap: 14px; align-items: center; max-width: 250px; animation: fu .8s .6s forwards; opacity: 0; }
+.ht2 .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--sage); flex-shrink: 0; box-shadow: 0 0 0 5px rgba(122,224,176,.15); animation: pulse 2s infinite; }
+.ht2 span { font-size: .82rem; color: var(--text-muted-2); font-weight: 500; }
+.hbadge { position: absolute; right: -20px; top: 140px; width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, rgba(240,192,80,.15), var(--surface)); border: 1px solid var(--header-line); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; backdrop-filter: blur(8px); box-shadow: var(--shadow-md); z-index: 4; animation: float 4s infinite; }
 
-/* Navigation Links */
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  list-style: none;
-}
-.nav-links li a {
-  position: relative;
-  padding: 8px 18px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-muted-2);
-  border-radius: 100px;
-  transition: color var(--transition-fast), background var(--transition-fast);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.nav-links li a:hover,
-.nav-links li a.active {
-  color: var(--text);
-  background: var(--surface-2);
-}
-.nav-links li a::before {
-  content: "";
-  position: absolute;
-  bottom: 4px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--terracotta);
-  border-radius: 2px;
-  transition: width var(--transition-base), left var(--transition-base);
-  transform: translateX(-50%);
-}
-.nav-links li a:hover::before,
-.nav-links li a.active::before {
-  width: 60%;
-}
+/* MARQUEE */
+.mq { background: linear-gradient(90deg, rgba(232,93,117,.08), rgba(122,224,176,.06)); border-top: 1px solid var(--header-line); border-bottom: 1px solid var(--header-line); padding: 16px 0; overflow: hidden; white-space: nowrap; }
+.mq-t { display: inline-flex; align-items: center; animation: sc 30s linear infinite; font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: var(--text-muted-2); }
+.mq-t span { margin: 0 32px; opacity: .9; }
+.mq-t .sep { width: 6px; height: 6px; border-radius: 50%; background: var(--terracotta); display: inline-block; opacity: .4; }
 
-/* Header Right */
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.header-controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+/* ABOUT */
+.about { padding: 120px 0 100px; }
+.ag { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: center; }
+.am { position: relative; }
+.am .iw { position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+.am img { width: 100%; display: block; transition: transform var(--transition-slow); }
+.am:hover img { transform: scale(1.03); }
+.am .badge { position: absolute; bottom: -24px; right: -24px; background: linear-gradient(135deg, var(--marigold), #DBA329); color: var(--paper); width: 120px; height: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .04em; line-height: 1.4; box-shadow: 0 14px 40px rgba(219,163,41,.4); border: 4px solid var(--surface-2); z-index: 2; animation: float 5s infinite; }
+.at h2 { font-size: clamp(2rem, 3.6vw, 2.8rem); margin: 16px 0 24px; }
+.at p { color: var(--text-muted-2); margin-bottom: 18px; max-width: 540px; font-size: .95rem; }
+.as { display: flex; gap: 50px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--header-line); }
+.as strong { display: block; font-family: var(--font-serif); font-size: 2rem; background: linear-gradient(135deg, var(--terracotta), var(--marigold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2; }
+.as span { font-size: .8rem; color: var(--text-muted); font-weight: 500; }
 
-/* Theme Toggle */
-.theme-btn {
-  appearance: none;
-  border: 1px solid var(--header-line);
-  background: var(--surface);
-  color: var(--text-muted-2);
-  border-radius: 999px;
-  padding: 8px 14px;
-  font-size: 0.78rem;
-  cursor: pointer;
-  font-weight: 600;
-  line-height: 1;
-  transition: transform var(--transition-fast), background var(--transition-fast),
-              border-color var(--transition-fast), color var(--transition-fast);
-  font-family: var(--font-mono);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-.theme-btn:hover {
-  transform: translateY(-2px);
-  background: var(--surface-2);
-  border-color: var(--terracotta);
-  color: var(--text);
-}
+/* SERVICES */
+.sv { padding: 100px 0 120px; background: var(--surface-3); }
+.sh { text-align: center; max-width: 620px; margin: 0 auto 60px; }
+.sh h2 { font-size: clamp(2rem, 3.6vw, 2.7rem); margin-top: 16px; }
+.tr { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.tc { background: var(--surface); backdrop-filter: blur(12px); border: 1px solid var(--header-line); border-radius: var(--radius-lg); padding: 36px 28px 30px; position: relative; box-shadow: var(--shadow-md); overflow: hidden; transition: transform var(--transition-base), box-shadow var(--transition-base); }
+.tc::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--terracotta), var(--marigold), transparent); opacity: 0; transition: opacity var(--transition-base); }
+.tc:hover::before { opacity: 1; }
+.tc:nth-child(even) { transform: translateY(8px); }
+.tc:nth-child(odd) { transform: translateY(-4px); }
+.tc:hover { transform: translateY(-12px) scale(1.02); box-shadow: var(--shadow-xl); border-color: rgba(232,93,117,.3); }
+.tc .gl { position: absolute; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(232,93,117,.08), transparent 70%); top: -60px; right: -60px; pointer-events: none; opacity: 0; transition: opacity var(--transition-base); }
+.tc:hover .gl { opacity: 1; }
+.th { width: 14px; height: 14px; border-radius: 50%; background: var(--surface-3); border: 2px solid var(--header-line); margin: 0 auto 16px; transition: border-color var(--transition-base); }
+.tc:hover .th { border-color: var(--terracotta); }
+.tc .ti { font-size: 2rem; margin-bottom: 16px; display: block; transition: transform var(--transition-base); }
+.tc:hover .ti { transform: scale(1.15) rotate(-5deg); }
+.tc h3 { font-size: 1.15rem; margin-bottom: 12px; }
+.tc p { font-size: .88rem; color: var(--text-muted-2); line-height: 1.6; }
+.tpr { font-family: var(--font-mono); font-size: .74rem; color: var(--terracotta); margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--header-line); display: block; letter-spacing: .04em; font-weight: 500; }
 
-/* Language Switch */
-.lang-switch {
-  display: flex;
-  gap: 4px;
-  background: var(--surface);
-  border-radius: 999px;
-  padding: 3px;
-  border: 1px solid var(--header-line);
-}
-.lang-btn {
-  appearance: none;
-  border: none;
-  background: transparent;
-  color: var(--text-muted-2);
-  border-radius: 999px;
-  padding: 6px 10px;
-  font-size: 0.70rem;
-  cursor: pointer;
-  font-weight: 700;
-  transition: all var(--transition-fast);
-  font-family: var(--font-mono);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-.lang-btn:hover {
-  color: var(--text);
-  background: var(--surface-2);
-}
-.lang-btn[aria-current="page"] {
-  background: var(--terracotta);
-  color: var(--paper);
-  box-shadow: 0 4px 12px rgba(232, 93, 117, 0.30);
-}
+/* TESTIMONIALS */
+.tm { padding: 110px 0; background: var(--surface-3); overflow: hidden; }
+.tmh { text-align: center; max-width: 600px; margin: 0 auto 50px; }
+.tmh h2 { font-size: clamp(2rem, 3.6vw, 2.7rem); margin-top: 16px; }
+.tmt { display: flex; transition: transform .6s cubic-bezier(.22,1,.36,1); }
+.tms { min-width: 100%; display: flex; justify-content: center; padding: 0 20px; }
+.tmc { max-width: 620px; text-align: center; padding: 48px 40px; background: var(--surface); backdrop-filter: blur(12px); border: 1px solid var(--header-line); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); position: relative; }
+.tmc::before { content: '"'; position: absolute; top: 10px; left: 30px; font-size: 6rem; line-height: 1; font-family: var(--font-serif); color: var(--terracotta); opacity: .15; pointer-events: none; }
+.tms2 { color: var(--marigold); font-size: 1.2rem; margin-bottom: 20px; letter-spacing: 4px; }
+.tmt2 { font-size: 1.1rem; line-height: 1.7; color: var(--text-muted-2); font-style: italic; margin-bottom: 24px; font-family: var(--font-display); }
+.tma { font-weight: 600; font-size: .95rem; color: var(--text); }
+.tma span { display: block; font-size: .78rem; color: var(--text-muted); font-weight: 400; margin-top: 4px; }
+.tmav { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--terracotta), var(--marigold)); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin: 0 auto 16px; box-shadow: 0 0 20px rgba(232,93,117,.2); }
+.cc { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 36px; }
+.cb { width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 1px solid var(--header-line); color: var(--text-muted-2); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all var(--transition-fast); }
+.cb:hover { background: var(--surface-2); border-color: var(--terracotta); color: var(--text); transform: scale(1.1); }
+.cd { display: flex; gap: 8px; }
+.cd span { width: 8px; height: 8px; border-radius: 50%; background: var(--header-line); cursor: pointer; transition: all var(--transition-fast); }
+.cd span.on { width: 24px; border-radius: 4px; background: var(--terracotta); box-shadow: 0 0 12px rgba(232,93,117,.3); }
 
-/* CTA Phone */
-.nav-cta {
-  background: linear-gradient(135deg, var(--terracotta), var(--terracotta-deep));
-  color: var(--paper) !important;
-  padding: 10px 22px;
-  border-radius: 999px;
-  font-size: 0.84rem;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  box-shadow: 0 4px 16px rgba(232, 93, 117, 0.30);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-sans);
-}
-.nav-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(232, 93, 117, 0.40);
-}
+/* GALLERY */
+.gal { padding: 110px 0; }
+.gh { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 50px; flex-wrap: wrap; gap: 20px; }
+.gh h2 { font-size: clamp(2rem, 3.6vw, 2.7rem); margin-top: 16px; }
+.gh p { max-width: 360px; color: var(--text-muted-2); font-size: .92rem; line-height: 1.7; }
+.gg { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
+.gg img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md); transition: transform var(--transition-slow); cursor: pointer; }
+.gg > div { overflow: hidden; border-radius: var(--radius-md); }
+.gg > div:hover img { transform: scale(1.05); }
+.gm { border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-lg); }
+.gm img { height: 100%; min-height: 440px; }
+.gs { display: flex; flex-direction: column; gap: 24px; }
+.gs .gl2 { border-radius: var(--radius-md); overflow: hidden; height: 220px; box-shadow: var(--shadow-md); }
+.gs .gl2 img { height: 100%; }
+.gn { background: var(--surface); backdrop-filter: blur(12px); border: 1px solid var(--header-line); border-radius: var(--radius-md); padding: 32px; display: flex; flex-direction: column; justify-content: center; flex: 1; transition: transform var(--transition-base), box-shadow var(--transition-base); }
+.gn:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.gn .eyebrow { color: var(--marigold); }
+.gn .eyebrow::after { background: var(--marigold); }
+.gn h3 { font-size: 1.35rem; margin: 12px 0 8px; font-weight: 600; }
+.gn p { color: var(--text-muted-2); font-size: .88rem; line-height: 1.7; }
 
-/* Mobile Toggle */
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 28px;
-  height: 22px;
-  position: relative;
-  z-index: 10;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0;
-}
-.nav-toggle span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: all var(--transition-base);
-  transform-origin: center;
-}
-.nav-toggle.active span:nth-child(1) {
-  transform: translateY(10px) rotate(45deg);
-}
-.nav-toggle.active span:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-.nav-toggle.active span:nth-child(3) {
-  transform: translateY(-10px) rotate(-45deg);
-}
-
-/* ============================================================
-   HERO
-   ============================================================ */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 100px 0 60px;
-  overflow: hidden;
-}
-
-/* Hero ambient glow */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: -200px -100px auto -100px;
-  height: 700px;
-  background:
-    radial-gradient(ellipse at 30% 20%, rgba(232, 93, 117, 0.20), transparent 60%),
-    radial-gradient(ellipse at 70% 40%, rgba(122, 224, 176, 0.12), transparent 50%),
-    radial-gradient(ellipse at 50% 60%, rgba(200, 168, 233, 0.08), transparent 40%);
-  filter: blur(40px);
-  opacity: 0.8;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  align-items: center;
-  gap: 40px;
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-/* Hero Copy */
-.hero-copy {
-  padding: 20px 0;
-  position: relative;
-  z-index: 2;
-}
-.hero-copy .eyebrow {
-  margin-bottom: 20px;
-  animation: fadeInUp 0.8s ease forwards;
-  opacity: 0;
-}
-.hero-copy h1 {
-  font-size: clamp(2.8rem, 5.5vw, 4.5rem);
-  letter-spacing: -0.02em;
-  margin-bottom: 24px;
-  line-height: 1.05;
-  animation: fadeInUp 0.8s ease 0.15s forwards;
-  opacity: 0;
-}
-.hero-copy h1 .highlight {
-  font-style: italic;
-  background: linear-gradient(135deg, var(--terracotta), var(--marigold));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 500;
-}
-.hero-copy p {
-  max-width: 480px;
-  font-size: 1.05rem;
-  color: var(--text-muted-2);
-  margin-bottom: 36px;
-  line-height: 1.7;
-  animation: fadeInUp 0.8s ease 0.3s forwards;
-  opacity: 0;
-}
-.hero-actions {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  align-items: center;
-  animation: fadeInUp 0.8s ease 0.45s forwards;
-  opacity: 0;
-}
-
-/* Hero Visual */
-.hero-visual {
-  position: relative;
-  height: 600px;
-  animation: fadeInScale 1s ease 0.3s forwards;
-  opacity: 0;
-}
-
-.hero-photo {
-  position: absolute;
-  right: -20px;
-  top: 40px;
-  width: 440px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-  transform: rotate(1.8deg);
-  border: 2px solid var(--surface-2);
-  transition: transform var(--transition-slow);
-}
-.hero-photo:hover { transform: rotate(0deg) scale(1.01); }
-.hero-photo::after {
-  content: "";
-  position: absolute;
-  inset: -4px;
-  border-radius: calc(var(--radius-lg) + 4px);
-  background: linear-gradient(135deg, rgba(232, 93, 117, 0.25), rgba(122, 224, 176, 0.15));
-  filter: blur(20px);
-  opacity: 0.5;
-  z-index: -1;
-  pointer-events: none;
-}
-.hero-photo img {
-  width: 100%;
-  height: 580px;
-  object-fit: cover;
-  transition: transform var(--transition-slow);
-}
-.hero-photo:hover img { transform: scale(1.03); }
-
-/* Hero Decorative Blob */
-.hero-blob {
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  background: linear-gradient(135deg, var(--marigold), var(--terracotta));
-  border-radius: 44% 56% 62% 38% / 42% 40% 60% 58%;
-  left: -40px;
-  top: 80px;
-  opacity: 0.30;
-  filter: blur(2px);
-  z-index: -1;
-}
-
-/* Hero Tag */
-.hero-tag {
-  position: absolute;
-  left: -20px;
-  bottom: 60px;
-  background: var(--surface-2);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--header-line);
-  padding: 18px 24px;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  z-index: 3;
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  max-width: 250px;
-  animation: fadeInUp 0.8s ease 0.6s forwards;
-  opacity: 0;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-.hero-tag:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
-}
-.hero-tag .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--sage);
-  flex-shrink: 0;
-  box-shadow: 0 0 0 5px rgba(122, 224, 176, 0.15);
-  animation: pulse-dot 2s ease-in-out infinite;
-}
-@keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 5px rgba(122, 224, 176, 0.15); }
-  50% { box-shadow: 0 0 0 10px rgba(122, 224, 176, 0.05); }
-}
-.hero-tag span { font-size: 0.82rem; color: var(--text-muted-2); font-weight: 500; }
-
-/* Floating badges decoration */
-.hero-badge-floating {
-  position: absolute;
-  right: -20px;
-  top: 140px;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold-light), var(--surface));
-  border: 1px solid var(--header-line);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  backdrop-filter: blur(8px);
-  box-shadow: var(--shadow-md);
-  z-index: 4;
-  animation: floaty 4s ease-in-out infinite;
-}
-
-/* -------- Marquee -------- */
-.marquee {
-  position: relative;
-  z-index: 2;
-  background: linear-gradient(90deg, rgba(232, 93, 117, 0.08), rgba(122, 224, 176, 0.06));
-  border-top: 1px solid var(--header-line);
-  border-bottom: 1px solid var(--header-line);
-  padding: 16px 0;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.marquee-track {
-  display: inline-flex;
-  align-items: center;
-  gap: 0;
-  animation: scroll 30s linear infinite;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1rem;
-  color: var(--text-muted-2);
-}
-.marquee-track span {
-  margin: 0 32px;
-  opacity: 0.9;
-}
-.marquee-track .sep {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--terracotta);
-  display: inline-block;
-  opacity: 0.4;
-}
-@keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* ============================================================
-   ABOUT
-   ============================================================ */
-.about {
-  padding: 120px 0 100px;
-  position: relative;
-}
-.about-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.about-media {
-  position: relative;
-}
-.about-media .img-wrap {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-}
-.about-media .img-wrap::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(232, 93, 117, 0.10), transparent 50%);
-  pointer-events: none;
-}
-.about-media img {
-  width: 100%;
-  display: block;
-  transition: transform var(--transition-slow);
-}
-.about-media:hover img { transform: scale(1.03); }
-
-.about-media .badge {
-  position: absolute;
-  bottom: -24px;
-  right: -24px;
-  background: linear-gradient(135deg, var(--marigold), var(--marigold-deep));
-  color: var(--paper);
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-family: var(--font-mono);
-  font-size: 0.70rem;
-  letter-spacing: 0.04em;
-  line-height: 1.4;
-  box-shadow: 0 14px 40px rgba(219, 163, 41, 0.40);
-  border: 4px solid var(--surface-2);
-  z-index: 2;
-  animation: floaty 5s ease-in-out infinite;
-}
-@keyframes floaty {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(1deg); }
-}
-
-.about-text h2 {
-  font-size: clamp(2rem, 3.6vw, 2.8rem);
-  margin: 16px 0 24px;
-}
-.about-text p {
-  color: var(--text-muted-2);
-  margin-bottom: 18px;
-  max-width: 540px;
-  font-size: 0.95rem;
-}
-
-.about-stats {
-  display: flex;
-  gap: 50px;
-  margin-top: 40px;
-  padding-top: 32px;
-  border-top: 1px solid var(--header-line);
-}
-.about-stats div strong {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 2rem;
-  background: linear-gradient(135deg, var(--terracotta), var(--marigold));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1.2;
-}
-.about-stats div span {
-  font-size: 0.80rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-/* ============================================================
-   SERVICES — Tag Cards Premium
-   ============================================================ */
-.services {
-  padding: 100px 0 120px;
-  position: relative;
-  background: var(--surface-3);
-}
-.services::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(232, 93, 117, 0.06), transparent 60%);
-  pointer-events: none;
-}
-.services-head {
-  text-align: center;
-  max-width: 620px;
-  margin: 0 auto 60px;
-}
-.services-head h2 {
-  font-size: clamp(2rem, 3.6vw, 2.7rem);
-  margin-top: 16px;
-}
-
-.tag-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
-}
-
-.tag-card {
-  background: var(--surface);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--header-line);
-  border-radius: var(--radius-lg);
-  padding: 36px 28px 30px;
-  position: relative;
-  box-shadow: var(--shadow-md);
-  transition: transform var(--transition-base), box-shadow var(--transition-base),
-              border-color var(--transition-base);
-  overflow: hidden;
-}
-.tag-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--terracotta), var(--marigold), transparent);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-.tag-card:hover::before { opacity: 1; }
-
-.tag-card:nth-child(even) {
-  transform: translateY(8px);
-}
-.tag-card:nth-child(odd) {
-  transform: translateY(-4px);
-}
-.tag-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: var(--shadow-xl);
-  border-color: rgba(232, 93, 117, 0.30);
-}
-
-.tag-card .card-glow {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(232, 93, 117, 0.08), transparent 70%);
-  top: -60px;
-  right: -60px;
-  pointer-events: none;
-  transition: opacity var(--transition-base);
-  opacity: 0;
-}
-.tag-card:hover .card-glow { opacity: 1; }
-
-.tag-hole {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--surface-3);
-  border: 2px solid var(--header-line);
-  margin: 0 auto 16px;
-  transition: border-color var(--transition-base);
-}
-.tag-card:hover .tag-hole { border-color: var(--terracotta); }
-
-.tag-card .tag-icon {
-  font-size: 2rem;
-  margin-bottom: 16px;
-  display: block;
-  transition: transform var(--transition-base);
-}
-.tag-card:hover .tag-icon { transform: scale(1.15) rotate(-5deg); }
-
-.tag-card h3 {
-  font-size: 1.15rem;
-  margin-bottom: 12px;
-}
-.tag-card p {
-  font-size: 0.88rem;
-  color: var(--text-muted-2);
-  line-height: 1.6;
-}
-.tag-price {
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  color: var(--terracotta);
-  margin-top: 18px;
-  padding-top: 16px;
-  border-top: 1px dashed var(--header-line);
-  display: block;
-  letter-spacing: 0.04em;
-  font-weight: 500;
-}
-
-/* ============================================================
-   GALLERY
-   ============================================================ */
-.gallery {
-  padding: 110px 0;
-  position: relative;
-}
-.gallery-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 50px;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.gallery-head h2 {
-  font-size: clamp(2rem, 3.6vw, 2.7rem);
-  margin-top: 16px;
-}
-.gallery-head p {
-  max-width: 360px;
-  color: var(--text-muted-2);
-  font-size: 0.92rem;
-  line-height: 1.7;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 24px;
-}
-.gallery-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-  transition: transform var(--transition-slow);
-}
-.gallery-grid > div {
-  overflow: hidden;
-  border-radius: var(--radius-md);
-}
-.gallery-grid > div:hover img { transform: scale(1.05); }
-
-.gallery-main {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  position: relative;
-}
-.gallery-main::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(232, 93, 117, 0.06), transparent 50%);
-  pointer-events: none;
-}
-.gallery-main img { height: 100%; min-height: 440px; }
-
-.gallery-side {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-.gallery-side .gallery-logo {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  height: 220px;
-  box-shadow: var(--shadow-md);
-}
-.gallery-side .gallery-logo img { height: 100%; }
-
-.gallery-note {
-  background: var(--surface);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--header-line);
-  border-radius: var(--radius-md);
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-.gallery-note:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-.gallery-note .eyebrow { color: var(--marigold); }
-.gallery-note .eyebrow::after { background: var(--marigold); }
-.gallery-note h3 {
-  font-size: 1.35rem;
-  margin: 12px 0 8px;
-  font-weight: 600;
-}
-.gallery-note p {
-  color: var(--text-muted-2);
-  font-size: 0.88rem;
-  line-height: 1.7;
-}
-
-/* ============================================================
-   VISIT / HOURS
-   ============================================================ */
-.visit {
-  background: var(--surface-3);
-  padding: 110px 0;
-  position: relative;
-  overflow: hidden;
-}
-.visit::before {
-  content: "";
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(232, 93, 117, 0.10), transparent 70%);
-  border-radius: 50%;
-  top: -250px;
-  right: -200px;
-  filter: blur(20px);
-  pointer-events: none;
-}
-.visit::after {
-  content: "";
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(122, 224, 176, 0.08), transparent 70%);
-  border-radius: 50%;
-  bottom: -150px;
-  left: -100px;
-  filter: blur(20px);
-  pointer-events: none;
-}
-.visit-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  position: relative;
-  z-index: 2;
-}
+/* VISIT */
+.visit { padding: 110px 0; position: relative; overflow: hidden; }
+.visit::before { content: ""; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(232,93,117,.1), transparent 70%); border-radius: 50%; top: -250px; right: -200px; filter: blur(20px); pointer-events: none; }
+.visit::after { content: ""; position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(122,224,176,.08), transparent 70%); border-radius: 50%; bottom: -150px; left: -100px; filter: blur(20px); pointer-events: none; }
+.vg { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; position: relative; z-index: 2; }
 .visit .eyebrow { color: var(--marigold); }
 .visit .eyebrow::after { background: var(--marigold); }
-.visit h2 {
-  font-size: clamp(2rem, 3.6vw, 2.7rem);
-  margin: 16px 0 28px;
-}
+.visit h2 { font-size: clamp(2rem, 3.6vw, 2.7rem); margin: 16px 0 28px; }
+.vi { display: flex; flex-direction: column; gap: 24px; margin-top: 8px; }
+.vr { display: flex; gap: 18px; align-items: flex-start; padding: 16px 20px; border-radius: var(--radius-md); background: var(--surface); border: 1px solid var(--header-line); transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base); }
+.vr:hover { transform: translateX(6px); box-shadow: var(--shadow-sm); border-color: rgba(232,93,117,.2); }
+.vr .icon { width: 44px; height: 44px; border-radius: 50%; background: var(--surface-2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem; transition: transform var(--transition-base); }
+.vr:hover .icon { transform: scale(1.1); }
+.vr h4 { font-family: var(--font-serif); font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+.vr p, .vr a { font-size: .88rem; color: var(--text-muted-2); transition: color var(--transition-fast); }
+.vr a:hover { color: var(--terracotta); }
+.mc { margin-top: 28px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--header-line); box-shadow: var(--shadow-md); transition: transform var(--transition-base), box-shadow var(--transition-base); }
+.mc:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.mc iframe { width: 100%; height: 220px; display: block; }
+.hc3 { background: var(--surface); backdrop-filter: blur(16px); border: 1px solid var(--header-line); border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow-lg); transition: transform var(--transition-base), box-shadow var(--transition-base); }
+.hc3:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+.hc3 h3 { font-size: 1.2rem; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+.hc3 h3 .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--sage); box-shadow: 0 0 0 5px rgba(122,224,176,.15); animation: pulse 2s infinite; }
+.ht3 { width: 100%; border-collapse: collapse; }
+.ht3 tr { border-bottom: 1px solid var(--header-line); }
+.ht3 tr:last-child { border-bottom: none; }
+.ht3 td { padding: 12px 0; font-size: .92rem; }
+.ht3 td:first-child { font-weight: 500; }
+.ht3 td:last-child { text-align: right; font-family: var(--font-mono); font-size: .84rem; color: var(--text-muted-2); }
+.ht3 tr.today td { color: var(--terracotta); font-weight: 600; }
 
-.visit-info {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-top: 8px;
-}
-.visit-row {
-  display: flex;
-  gap: 18px;
-  align-items: flex-start;
-  padding: 16px 20px;
-  border-radius: var(--radius-md);
-  background: var(--surface);
-  border: 1px solid var(--header-line);
-  transition: transform var(--transition-base), box-shadow var(--transition-base),
-              border-color var(--transition-base);
-}
-.visit-row:hover {
-  transform: translateX(6px);
-  box-shadow: var(--shadow-sm);
-  border-color: rgba(232, 93, 117, 0.20);
-}
-.visit-row .icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--surface-2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: 1.1rem;
-  transition: transform var(--transition-base);
-}
-.visit-row:hover .icon { transform: scale(1.1); }
-.visit-row h4 {
-  font-family: var(--font-serif);
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-.visit-row p,
-.visit-row a {
-  font-size: 0.88rem;
-  color: var(--text-muted-2);
-  transition: color var(--transition-fast);
-}
-.visit-row a:hover { color: var(--terracotta); }
+/* CTA */
+.cta { padding: 120px 0; text-align: center; }
+.cta h2 { font-size: clamp(2.4rem, 4.8vw, 3.6rem); max-width: 700px; margin: 16px auto 32px; }
+.cta h2 .h { color: var(--terracotta); font-style: italic; font-weight: 500; }
+.ca { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
-.hours-card {
-  background: var(--surface);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--header-line);
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  box-shadow: var(--shadow-lg);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-.hours-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
-}
-.hours-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.hours-card h3 .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--sage);
-  box-shadow: 0 0 0 5px rgba(122, 224, 176, 0.15);
-  animation: pulse-dot 2s ease-in-out infinite;
-}
-.hours-table { width: 100%; border-collapse: collapse; }
-.hours-table tr { border-bottom: 1px solid var(--header-line); }
-.hours-table tr:last-child { border-bottom: none; }
-.hours-table td {
-  padding: 12px 0;
-  font-size: 0.92rem;
-}
-.hours-table td:first-child { font-weight: 500; }
-.hours-table td:last-child {
-  text-align: right;
-  font-family: var(--font-mono);
-  font-size: 0.84rem;
-  color: var(--text-muted-2);
-}
-.hours-table tr.today td {
-  color: var(--terracotta);
-  font-weight: 600;
-}
-.hours-table tr.today td:last-child {
-  color: var(--terracotta);
-  font-weight: 500;
-}
-.hours-table tr.today {
-  position: relative;
-}
-.hours-table tr.today td:first-child::before {
-  content: "• ";
-  color: var(--terracotta);
-}
+/* FOOTER */
+footer { background: linear-gradient(180deg, var(--surface-3), transparent); border-top: 1px solid var(--header-line); padding: 64px 0 32px; }
+.ft { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--header-line); margin-bottom: 28px; }
+.fb2 { display: flex; align-items: center; gap: 14px; font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; }
+.fl { display: flex; gap: 60px; flex-wrap: wrap; }
+.fl h5 { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--marigold); margin-bottom: 18px; font-weight: 500; }
+.fl a, .fl p { display: block; font-size: .86rem; margin-bottom: 10px; color: var(--text-muted-2); transition: color var(--transition-fast), transform var(--transition-fast); }
+.fl a:hover { color: var(--text); transform: translateX(4px); }
+.fb3 { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: .76rem; color: var(--text-muted); }
 
-/* ============================================================
-   CTA
-   ============================================================ */
-.cta {
-  padding: 120px 0;
-  text-align: center;
-  position: relative;
-}
-.cta::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(232, 93, 117, 0.04), transparent 60%);
-  pointer-events: none;
-}
-.cta h2 {
-  font-size: clamp(2.4rem, 4.8vw, 3.6rem);
-  max-width: 700px;
-  margin: 16px auto 32px;
-}
-.cta h2 .highlight {
-  color: var(--terracotta);
-  font-style: italic;
-  font-weight: 500;
-}
-.cta-actions {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
+/* SCROLL REVEAL */
+.r, .rl, .rr, .rs { opacity: 0; will-change: opacity, transform, filter; transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1), filter .9s cubic-bezier(.22,1,.36,1); }
+.r { transform: translateY(30px); filter: blur(8px); }
+.rl { transform: translateX(-40px); filter: blur(6px); }
+.rr { transform: translateX(40px); filter: blur(6px); }
+.rs { transform: scale(.92); filter: blur(4px); }
+.r.vis, .rl.vis, .rr.vis, .rs.vis { opacity: 1; transform: translateY(0) translateX(0) scale(1); filter: blur(0); }
+.tc:nth-child(1).rs { transition-delay: 0s; }
+.tc:nth-child(2).rs { transition-delay: .1s; }
+.tc:nth-child(3).rs { transition-delay: .2s; }
+.tc:nth-child(4).rs { transition-delay: .3s; }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
-footer {
-  background: linear-gradient(180deg, var(--surface-3), transparent);
-  border-top: 1px solid var(--header-line);
-  padding: 64px 0 32px;
-  position: relative;
-}
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid var(--header-line);
-  margin-bottom: 28px;
-}
-.footer-brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-.footer-brand .brand-mark {
-  width: 36px;
-  height: 36px;
-  font-size: 0.9rem;
-}
-.footer-links {
-  display: flex;
-  gap: 60px;
-  flex-wrap: wrap;
-}
-.footer-links div h5 {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--marigold);
-  margin-bottom: 18px;
-  font-weight: 500;
-}
-.footer-links div a,
-.footer-links div p {
-  display: block;
-  font-size: 0.86rem;
-  margin-bottom: 10px;
-  color: var(--text-muted-2);
-  transition: color var(--transition-fast), transform var(--transition-fast);
-}
-.footer-links div a:hover {
-  color: var(--text);
-  transform: translateX(4px);
-}
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 0.76rem;
-  color: var(--text-muted);
-}
+/* LIGHTBOX */
+.lb2 { display: none; position: fixed; inset: 0; z-index: 99998; background: rgba(0,0,0,.92); backdrop-filter: blur(20px); align-items: center; justify-content: center; cursor: pointer; opacity: 0; transition: opacity .4s; }
+.lb2.on { display: flex; opacity: 1; }
+.lb2 img { max-width: 90vw; max-height: 90vh; border-radius: var(--radius-md); box-shadow: var(--shadow-xl); transform: scale(.9); transition: transform .4s cubic-bezier(.22,1,.36,1); }
+.lb2.on img { transform: scale(1); }
+.lb2 .cl { position: absolute; top: 24px; right: 32px; background: none; border: none; color: #fff; font-size: 2.4rem; cursor: pointer; opacity: .7; transition: opacity var(--transition-fast), transform var(--transition-fast); z-index: 2; }
+.lb2 .cl:hover { opacity: 1; transform: rotate(90deg); }
 
-/* ============================================================
-   SCROLL REVEAL ANIMATIONS
-   ============================================================ */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  filter: blur(8px);
-  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-              filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform, filter;
-}
-.reveal.is-in {
-  opacity: 1;
-  transform: translateY(0);
-  filter: blur(0);
-}
+/* BACK TO TOP */
+.btt { position: fixed; bottom: 32px; right: 32px; width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--terracotta), var(--marigold)); color: var(--paper); border: none; cursor: pointer; font-size: 1.4rem; box-shadow: 0 8px 24px rgba(232,93,117,.35); z-index: 50; opacity: 0; visibility: hidden; transform: translateY(20px) scale(.8); transition: all var(--transition-base); display: flex; align-items: center; justify-content: center; }
+.btt.vis { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+.btt:hover { transform: translateY(-4px) scale(1.08); box-shadow: 0 12px 32px rgba(232,93,117,.45); }
 
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-40px);
-  filter: blur(6px);
-  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-              filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform, filter;
-}
-.reveal-left.is-in {
-  opacity: 1;
-  transform: translateX(0);
-  filter: blur(0);
-}
+/* WHATSAPP */
+.wa { position: fixed; bottom: 96px; right: 32px; width: 56px; height: 56px; border-radius: 50%; background: #25D366; color: #fff; font-size: 1.8rem; box-shadow: 0 8px 24px rgba(37,211,102,.35); z-index: 50; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all var(--transition-base); animation: wp 2s infinite; }
+.wa:hover { transform: translateY(-4px) scale(1.08); box-shadow: 0 12px 32px rgba(37,211,102,.5); }
 
-.reveal-right {
-  opacity: 0;
-  transform: translateX(40px);
-  filter: blur(6px);
-  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-              filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform, filter;
-}
-.reveal-right.is-in {
-  opacity: 1;
-  transform: translateX(0);
-  filter: blur(0);
-}
-
-.reveal-scale {
-  opacity: 0;
-  transform: scale(0.92);
-  filter: blur(4px);
-  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-              filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform, filter;
-}
-.reveal-scale.is-in {
-  opacity: 1;
-  transform: scale(1);
-  filter: blur(0);
-}
-
-/* Stagger delays for cards */
-.tag-card:nth-child(1) .reveal-scale,
-.tag-card:nth-child(1).reveal-scale { transition-delay: 0s; }
-.tag-card:nth-child(2) .reveal-scale,
-.tag-card:nth-child(2).reveal-scale { transition-delay: 0.1s; }
-.tag-card:nth-child(3) .reveal-scale,
-.tag-card:nth-child(3).reveal-scale { transition-delay: 0.2s; }
-.tag-card:nth-child(4) .reveal-scale,
-.tag-card:nth-child(4).reveal-scale { transition-delay: 0.3s; }
-
-/* Fade-in-up keyframes (for hero) */
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeInScale {
-  0% { opacity: 0; transform: scale(0.95); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-/* Shine effect on cards */
-.shine {
-  position: relative;
-  overflow: hidden;
-}
-.shine::after {
-  content: "";
-  position: absolute;
-  inset: -40% -50%;
-  background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,0.08) 50%, transparent 65%);
-  transform: translateX(-30%);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  pointer-events: none;
-}
-.shine:hover::after {
-  opacity: 1;
-  animation: shineMove 0.8s ease forwards;
-}
-@keyframes shineMove {
-  from { transform: translateX(-40%); }
-  to { transform: translateX(40%); }
-}
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
-  .tag-row { grid-template-columns: repeat(2, 1fr); }
-  .hero-grid { grid-template-columns: 1fr; gap: 20px; }
-  .hero-visual { height: 420px; margin-top: 20px; }
-  .hero-photo { width: 80%; right: 10px; top: 0; }
-  .hero-blob { width: 220px; height: 220px; left: 10px; }
-  .hero-tag { left: 10px; bottom: 10px; }
-  .hero-badge-floating { right: 10px; top: 30px; width: 56px; height: 56px; font-size: 1.3rem; }
-  .about-grid { grid-template-columns: 1fr; gap: 60px; }
-  .about-media .badge { right: 0; bottom: 0; }
-  .gallery-grid { grid-template-columns: 1fr; }
-  .gallery-main img { min-height: 300px; }
-  .visit-grid { grid-template-columns: 1fr; gap: 50px; }
-  .footer-top { flex-direction: column; }
+  .tr { grid-template-columns: repeat(2, 1fr); }
+  .hg { grid-template-columns: 1fr; gap: 20px; }
+  .hv { height: 420px; margin-top: 20px; }
+  .hp { width: 80%; right: 10px; top: 0; }
+  .hb { width: 220px; height: 220px; left: 10px; }
+  .ht2 { left: 10px; bottom: 10px; }
+  .hbadge { right: 10px; top: 30px; width: 56px; height: 56px; font-size: 1.3rem; }
+  .ag { grid-template-columns: 1fr; gap: 60px; }
+  .am .badge { right: 0; bottom: 0; }
+  .gg { grid-template-columns: 1fr; }
+  .gm img { min-height: 300px; }
+  .vg { grid-template-columns: 1fr; gap: 50px; }
+  .ft { flex-direction: column; }
 }
-
 @media (max-width: 768px) {
   .nav { padding: 0 20px; }
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: var(--header-bg);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 100px 32px 40px;
-    gap: 8px;
-    transition: right var(--transition-base);
-    box-shadow: -10px 0 40px rgba(0,0,0,0.30);
-    border-left: 1px solid var(--header-line);
-    z-index: 5;
-  }
-  .nav-links.open { right: 0; }
-  .nav-links li a {
-    padding: 12px 20px;
-    width: 100%;
-    font-size: 1rem;
-  }
-  .nav-links li a::before { display: none; }
-
-  .nav-toggle { display: flex; }
-
-  .header-right .nav-cta { display: none; }
-
+  .nav-l { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: var(--header-bg); backdrop-filter: blur(30px); flex-direction: column; align-items: flex-start; padding: 100px 32px 40px; gap: 8px; transition: right var(--transition-base); box-shadow: -10px 0 40px rgba(0,0,0,.3); border-left: 1px solid var(--header-line); z-index: 5; }
+  .nav-l.open { right: 0; }
+  .nav-l a { padding: 12px 20px; width: 100%; font-size: 1rem; }
+  .nav-l a::before { display: none; }
+  .nt { display: flex; }
+  .hr .cta-h { display: none; }
   .hero { min-height: auto; padding: 100px 0 40px; }
-  .hero-copy h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
-  .hero-visual { height: 340px; }
-  .hero-photo { width: 90%; }
-  .hero-tag { max-width: 200px; padding: 14px 18px; }
-  .hero-badge-floating { display: none; }
-
-  .tag-row { grid-template-columns: 1fr; }
-  .tag-card:nth-child(even),
-  .tag-card:nth-child(odd) { transform: none; }
-  .tag-card:hover { transform: translateY(-8px) scale(1.01); }
-
-  .visit-row { padding: 14px 16px; }
-  .hours-card { padding: 28px; }
-
-  .about-stats { gap: 30px; }
-  .about-stats div strong { font-size: 1.6rem; }
+  .hc2 h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
+  .hv { height: 340px; }
+  .hp { width: 90%; }
+  .ht2 { max-width: 200px; padding: 14px 18px; }
+  .hbadge { display: none; }
+  .tr { grid-template-columns: 1fr; }
+  .tc:nth-child(even), .tc:nth-child(odd) { transform: none; }
+  .tc:hover { transform: translateY(-8px) scale(1.01); }
+  .vr { padding: 14px 16px; }
+  .hc3 { padding: 28px; }
+  .as { gap: 30px; }
+  .as strong { font-size: 1.6rem; }
+  .wa { width: 48px; height: 48px; font-size: 1.4rem; right: 20px; bottom: 84px; }
+  .btt { width: 40px; height: 40px; font-size: 1.1rem; right: 20px; bottom: 24px; }
+  .mc iframe { height: 160px; }
+  .tmc { padding: 32px 24px; }
 }
-
 @media (max-width: 480px) {
-  .hero-visual { height: 280px; }
-  .hero-photo { width: 95%; right: 5px; }
-  .hero-tag { max-width: 180px; padding: 12px 16px; left: 5px; bottom: 5px; }
-  .hero-tag span { font-size: 0.75rem; }
-  .hero-blob { display: none; }
-  .brand-sub { display: none; }
-  .header-controls .lang-switch { gap: 2px; }
-  .lang-btn { padding: 5px 8px; font-size: 0.65rem; }
+  .hv { height: 280px; }
+  .hp { width: 95%; right: 5px; }
+  .ht2 { max-width: 180px; padding: 12px 16px; left: 5px; bottom: 5px; }
+  .ht2 span { font-size: .75rem; }
+  .hb, .brand-s { display: none; }
+  .hc .ls { gap: 2px; }
+  .lb { padding: 5px 8px; font-size: .65rem; }
   .cta h2 { font-size: clamp(1.8rem, 6vw, 2.2rem); }
-  .footer-links { gap: 30px; }
+  .fl { gap: 30px; }
 }
 
-/* -------- Focus & Reduced Motion -------- */
-:focus-visible {
-  outline: 2.5px solid var(--terracotta);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
+/* FOCUS */
+:focus-visible { outline: 2.5px solid var(--terracotta); outline-offset: 3px; border-radius: 4px; }
 
+/* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation: none !important;
-    transition: none !important;
-  }
-  .reveal,
-  .reveal-left,
-  .reveal-right,
-  .reveal-scale {
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
-  }
-  .loader { display: none !important; }
-  .cursor-ring, .cursor-dot { display: none !important; }
-  .petal { display: none !important; }
-  .hero-badge-floating { animation: none !important; }
-  .badge { animation: none !important; }
-  .hero-tag .dot { animation: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .r, .rl, .rr, .rs { opacity: 1 !important; transform: none !important; filter: none !important; }
+  .loader, .cursor-r, .cursor-d, .petal, .hbadge, .badge, .ht2 .dot, .wa { display: none !important; }
 }
-
-/* -------- Mobile no cursor -------- */
-@media (pointer: coarse) {
-  .cursor-ring, .cursor-dot { display: none !important; }
-}
-
+@media (pointer: coarse) { .cursor-r, .cursor-d { display: none !important; } }
 </style>
 </head>
 <body>
 
-  <!-- Loading Screen -->
-  <div class="loader" id="loader" role="status" aria-label="Chargement">
-    <div class="loader-flower" aria-hidden="true"></div>
-    <div class="loader-bar" aria-hidden="true">
-      <div class="loader-bar-fill"></div>
-    </div>
-  </div>
-
-  <!-- Scroll Progress -->
-  <div class="scroll-progress" aria-hidden="true">
-    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
-  </div>
-
-  <!-- Grain Overlay -->
-  <div class="grain" aria-hidden="true"></div>
-
-  <!-- Floating Particles (Pétales) -->
-  <div class="particles-container" id="particlesContainer" aria-hidden="true"></div>
-
-  <!-- Custom Cursor -->
-  <div class="cursor-ring" aria-hidden="true"></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
-
-  <!-- ============================== HEADER ============================== -->
-  <header id="header">
-    <div class="nav">
-      <a href="#top" class="brand">
-        <span class="brand-mark">FB</span>
-        <span class="brand-text">
-          <span class="brand-name" data-i18n="brand">Flower Bubble</span>
-          <span class="brand-sub">Fleuriste · Paris 14e</span>
-        </span>
-      </a>
-
-      <ul class="nav-links" id="navLinks" role="navigation" aria-label="Navigation principale">
-        <li><a href="#about" data-i18n="nav_about" class="nav-link">La boutique</a></li>
-        <li><a href="#services" data-i18n="nav_services" class="nav-link">Nos créations</a></li>
-        <li><a href="#gallery" data-i18n="nav_gallery" class="nav-link">Galerie</a></li>
-        <li><a href="#visit" data-i18n="nav_visit" class="nav-link">Infos pratiques</a></li>
-      </ul>
-
-      <div class="header-right">
-        <div class="header-controls">
-          <div class="theme-switch" aria-label="Thème">
-            <button class="theme-btn" type="button" id="themeToggle" aria-pressed="false">
-              <span id="themeLabel">Light</span>
-            </button>
-          </div>
-
-          <div class="lang-switch" role="group" aria-label="Langue">
-            <button class="lang-btn" type="button" data-lang-set="fr" aria-current="page">FR</button>
-            <button class="lang-btn" type="button" data-lang-set="en">EN</button>
-            <button class="lang-btn" type="button" data-lang-set="ar">AR</button>
-          </div>
-        </div>
-
-        <a href="tel:+33142184856" class="nav-cta" data-i18n="phone_cta">
-          <span>📞</span>
-          <span>01 42 18 48 56</span>
-        </a>
-
-        <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- ============================== MAIN ============================== -->
-  <main id="top">
-
-    <!-- HERO -->
-    <section class="hero" id="hero">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow" data-i18n="hero_eyebrow">Fleuriste — 14e arrondissement, Paris</span>
-          <h1 data-i18n="hero_title">Des fleurs fraîches, <span class="highlight">une bulle</span> de douceur dans votre journée.</h1>
-          <p data-i18n="hero_p">Bouquets composés à la main, plantes choisies avec soin, et un accueil chaleureux rue de l'Ouest. Flower Bubble habille vos instants de fête comme vos petits riens du quotidien.</p>
-          <div class="hero-actions">
-            <a href="#visit" class="btn btn-primary" data-i18n="hero_btn_hours">
-              <span>📍</span>
-              <span>Voir les horaires & l'adresse</span>
-            </a>
-            <a href="tel:+33142184856" class="btn btn-ghost" data-i18n="hero_btn_call">
-              <span>📞</span>
-              <span>Appeler la boutique</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="hero-blob" aria-hidden="true"></div>
-
-          <div class="hero-photo">
-            <img src="shop.jpg" alt="Intérieur de la boutique Flower Bubble, mur jaune avec enseigne néon et bouquets colorés">
-          </div>
-
-          <div class="hero-badge-floating" aria-hidden="true">💐</div>
-
-          <div class="hero-tag">
-            <span class="dot"></span>
-            <span>Compositions renouvelées chaque semaine, selon les arrivages</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MARQUEE -->
-    <div class="marquee">
-      <div class="marquee-track">
-        <span>Fleurs fraîches</span><span class="sep"></span>
-        <span>Bouquets sur-mesure</span><span class="sep"></span>
-        <span>Plantes d'intérieur</span><span class="sep"></span>
-        <span>Livraison locale</span><span class="sep"></span>
-        <span>Ouvert 7j/7</span><span class="sep"></span>
-        <span>Fleurs fraîches</span><span class="sep"></span>
-        <span>Bouquets sur-mesure</span><span class="sep"></span>
-        <span>Plantes d'intérieur</span><span class="sep"></span>
-        <span>Livraison locale</span><span class="sep"></span>
-        <span>Ouvert 7j/7</span><span class="sep"></span>
-      </div>
-    </div>
-
-    <!-- ABOUT -->
-    <section class="about reveal" id="about" data-reveal>
-      <div class="wrap about-grid">
-        <div class="about-media reveal-left" data-reveal-left>
-          <div class="img-wrap">
-            <img src="logo.jpg" alt="Logo Flower Bubble — café glacé et bouquet de fleurs">
-          </div>
-          <div class="badge">DEPUIS<br>2022</div>
-        </div>
-        <div class="about-text reveal-right" data-reveal-right>
-          <span class="eyebrow" data-i18n="about_eyebrow">Notre histoire</span>
-          <h2 data-i18n="about_title">Une boutique de quartier, pensée comme un jardin qu'on visite tous les jours</h2>
-          <p data-i18n="about_p1">Flower Bubble est une boutique du 14e arrondissement de Paris, spécialisée dans la vente de fleurs, de plantes et de compositions florales fraîches et élégantes, adaptées à toutes les occasions.</p>
-          <p data-i18n="about_p2">De la rose classique à la fleur de saison plus surprenante, chaque bouquet est assemblé à la main dans notre atelier, au 57 rue de l'Ouest — pour vos mariages, anniversaires, ou simplement pour apporter un peu de nature chez vous.</p>
-
-          <div class="about-stats">
-            <div><strong>100%</strong><span>Compositions faites main</span></div>
-            <div><strong>7/7</strong><span>Ouvert tous les jours</span></div>
-            <div><strong>14e</strong><span>Arrondissement de Paris</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="services reveal" id="services" data-reveal>
-      <div class="wrap">
-        <div class="services-head">
-          <span class="eyebrow" data-i18n="services_eyebrow">Ce que nous proposons</span>
-          <h2 data-i18n="services_title">Nos créations, étiquetées avec soin</h2>
-        </div>
-        <div class="tag-row">
-          <div class="tag-card reveal-scale" data-reveal-scale>
-            <div class="card-glow"></div>
-            <div class="tag-hole"></div>
-            <span class="tag-icon">💐</span>
-            <h3 data-i18n="s_bouquets_title">Bouquets</h3>
-            <p data-i18n="s_bouquets_p">Compositions rondes, champêtres ou graphiques, réalisées selon vos goûts et le budget souhaité.</p>
-            <span class="tag-price" data-i18n="s_bouquets_price">SUR DEVIS</span>
-          </div>
-          <div class="tag-card reveal-scale" data-reveal-scale>
-            <div class="card-glow"></div>
-            <div class="tag-hole"></div>
-            <span class="tag-icon">🌿</span>
-            <h3 data-i18n="s_plants_title">Plantes</h3>
-            <p data-i18n="s_plants_p">Plantes d'intérieur et d'extérieur sélectionnées pour leur robustesse et leur allure.</p>
-            <span class="tag-price" data-i18n="s_plants_price">EN BOUTIQUE</span>
-          </div>
-          <div class="tag-card reveal-scale" data-reveal-scale>
-            <div class="card-glow"></div>
-            <div class="tag-hole"></div>
-            <span class="tag-icon">🤍</span>
-            <h3 data-i18n="s_events_title">Événements</h3>
-            <p data-i18n="s_events_p">Mariages, anniversaires, ouvertures de boutique : décoration florale pensée sur-mesure.</p>
-            <span class="tag-price" data-i18n="s_events_price">SUR RENDEZ-VOUS</span>
-          </div>
-          <div class="tag-card reveal-scale" data-reveal-scale>
-            <div class="card-glow"></div>
-            <div class="tag-hole"></div>
-            <span class="tag-icon">🎁</span>
-            <h3 data-i18n="s_gifts_title">Coffrets & graines</h3>
-            <p data-i18n="s_gifts_p">Petites attentions à offrir : graines, engrais et accessoires pour prolonger le geste.</p>
-            <span class="tag-price" data-i18n="s_gifts_price">IDÉE CADEAU</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section class="gallery reveal" id="gallery" data-reveal>
-      <div class="wrap">
-        <div class="gallery-head">
-          <div>
-            <span class="eyebrow" data-i18n="gallery_eyebrow">Dans la boutique</span>
-            <h2 data-i18n="gallery_title">Un coin de couleur rue de l'Ouest</h2>
-          </div>
-          <p data-i18n="gallery_p">Notre mur jaune et son enseigne lumineuse sont devenus la signature du quartier — passez nous voir.</p>
-        </div>
-
-        <div class="gallery-grid">
-          <div class="gallery-main reveal-left" data-reveal-left>
-            <img src="shop.jpg" alt="Mur de fleurs et enseigne néon Flower Bubble">
-          </div>
-          <div class="gallery-side">
-            <div class="gallery-logo reveal-scale" data-reveal-scale>
-              <img src="logo.jpg" alt="Logo Flower Bubble sur fond bois">
-            </div>
-            <div class="gallery-note reveal-right" data-reveal-right>
-              <span class="eyebrow" data-i18n="gallery_note_eyebrow">Le geste Flower Bubble</span>
-              <h3 data-i18n="gallery_note_title">Fraîcheur d'abord</h3>
-              <p data-i18n="gallery_note_p">Nos arrivages sont choisis chaque semaine pour garantir des fleurs fraîches et des couleurs qui durent.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VISIT -->
-    <section class="visit reveal" id="visit" data-reveal>
-      <div class="wrap visit-grid">
-        <div>
-          <span class="eyebrow" data-i18n="visit_eyebrow">Infos pratiques</span>
-          <h2 data-i18n="visit_title">Venez nous rendre visite</h2>
-          <div class="visit-info">
-            <div class="visit-row">
-              <span class="icon">📍</span>
-              <div>
-                <h4 data-i18n="visit_addr_title">Adresse</h4>
-                <a href="https://www.google.com/maps/search/?api=1&query=57+Rue+de+l%27Ouest+75014+Paris" target="_blank" rel="noopener" data-i18n="visit_addr_text">57 Rue de l'Ouest, 75014 Paris, France</a>
-              </div>
-            </div>
-            <div class="visit-row">
-              <span class="icon">📞</span>
-              <div>
-                <h4 data-i18n="visit_phone_title">Téléphone</h4>
-                <a href="tel:+33142184856" data-i18n="visit_phone_text">+33 1 42 18 48 56</a>
-              </div>
-            </div>
-            <div class="visit-row">
-              <span class="icon">✦</span>
-              <div>
-                <h4 data-i18n="visit_note_title">Bon à savoir</h4>
-                <p data-i18n="visit_note_p">Boutique ouverte tous les jours de la semaine, y compris le week-end.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="hours-card reveal-scale" data-reveal-scale>
-          <h3><span class="dot"></span> <span data-i18n="hours_title">Horaires d'ouverture</span></h3>
-          <table class="hours-table">
-            <tr><td data-i18n="d1">Lundi</td><td>10:00 – 20:00</td></tr>
-            <tr><td data-i18n="d2">Mardi</td><td>10:00 – 20:00</td></tr>
-            <tr><td data-i18n="d3">Mercredi</td><td>10:00 – 20:00</td></tr>
-            <tr><td data-i18n="d4">Jeudi</td><td>10:00 – 20:00</td></tr>
-            <tr><td data-i18n="d5">Vendredi</td><td>10:00 – 20:00</td></tr>
-            <tr><td data-i18n="d6">Samedi</td><td>9:30 – 20:00</td></tr>
-            <tr><td data-i18n="d7">Dimanche</td><td>9:30 – 18:00</td></tr>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta reveal" data-reveal>
-      <div class="wrap">
-        <span class="eyebrow" data-i18n="cta_eyebrow">Une envie de fleurs ?</span>
-        <h2 data-i18n="cta_title">Composons ensemble <span class="highlight">votre</span> prochain bouquet</h2>
-        <div class="cta-actions">
-          <a href="tel:+33142184856" class="btn btn-primary" data-i18n="cta_phone">
-            <span>📞</span>
-            <span>01 42 18 48 56</span>
-          </a>
-          <a href="https://www.google.com/maps/search/?api=1&query=57+Rue+de+l%27Ouest+75014+Paris" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="cta_route">
-            <span>📍</span>
-            <span>Itinéraire</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ============================== FOOTER ============================== -->
-  <footer>
-    <div class="wrap">
-      <div class="footer-top">
-        <a href="#top" class="footer-brand">
-          <span class="brand-mark">FB</span>
-          <span class="brand-text">
-            <span class="brand-name" data-i18n="brand">Flower Bubble</span>
-            <span class="brand-sub">Fleuriste · Paris 14e</span>
-          </span>
-        </a>
-        <div class="footer-links">
-          <div>
-            <h5 data-i18n="footer_boutique_h">Boutique</h5>
-            <a href="#about" data-i18n="footer_about_link">La boutique</a>
-            <a href="#services" data-i18n="footer_services_link">Nos créations</a>
-            <a href="#gallery" data-i18n="footer_gallery_link">Galerie</a>
-          </div>
-          <div>
-            <h5 data-i18n="footer_contact_h">Contact</h5>
-            <p data-i18n="footer_addr">57 Rue de l'Ouest, 75014 Paris</p>
-            <a href="tel:+33142184856" data-i18n="footer_phone">+33 1 42 18 48 56</a>
-          </div>
-          <div>
-            <h5 data-i18n="footer_hours_h">Horaires</h5>
-            <p data-i18n="footer_hours_week">Lun – Ven : 10:00 – 20:00</p>
-            <p data-i18n="footer_hours_weekend">Sam : 9:30 – 20:00 · Dim : 9:30 – 18:00</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span data-i18n="footer_copy">© 2026 Flower Bubble — Paris 14e</span>
-        <span data-i18n="footer_note">Site réalisé avec soin, comme nos bouquets 🌸</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ============================== JAVASCRIPT ============================== -->
-  <script>
-  (function(){
-    'use strict';
-
-    const STORAGE_LANG = 'fb_lang';
-    const STORAGE_THEME = 'fb_theme';
-
-    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isMobile = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
-    const isTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
-
-    /* ---- i18n ---- */
-    const i18n = {
-      fr: {
-        title: 'Flower Bubble — Fleuriste, 14e Paris',
-        brand: 'Flower Bubble',
-        nav_about: 'La boutique',
-        nav_services: 'Nos créations',
-        nav_gallery: 'Galerie',
-        nav_visit: 'Infos pratiques',
-        theme_light: 'Light',
-        theme_dark: 'Dark',
-        phone_cta: '01 42 18 48 56',
-        hero_eyebrow: 'Fleuriste — 14e arrondissement, Paris',
-        hero_title: 'Des fleurs fraîches, <span class="highlight">une bulle</span> de douceur dans votre journée.',
-        hero_p: "Bouquets composés à la main, plantes choisies avec soin, et un accueil chaleureux rue de l'Ouest. Flower Bubble habille vos instants de fête comme vos petits riens du quotidien.",
-        hero_btn_hours: 'Voir les horaires & l\'adresse',
-        hero_btn_call: 'Appeler la boutique',
-        about_eyebrow: 'Notre histoire',
-        about_title: 'Une boutique de quartier, pensée comme un jardin qu\'on visite tous les jours',
-        about_p1: "Flower Bubble est une boutique du 14e arrondissement de Paris, spécialisée dans la vente de fleurs, de plantes et de compositions florales fraîches et élégantes, adaptées à toutes les occasions.",
-        about_p2: "De la rose classique à la fleur de saison plus surprenante, chaque bouquet est assemblé à la main dans notre atelier, au 57 rue de l'Ouest — pour vos mariages, anniversaires, ou simplement pour apporter un peu de nature chez vous.",
-        services_eyebrow: 'Ce que nous proposons',
-        services_title: 'Nos créations, étiquetées avec soin',
-        s_bouquets_title: 'Bouquets',
-        s_bouquets_p: 'Compositions rondes, champêtres ou graphiques, réalisées selon vos goûts et le budget souhaité.',
-        s_bouquets_price: 'SUR DEVIS',
-        s_plants_title: 'Plantes',
-        s_plants_p: "Plantes d'intérieur et d'extérieur sélectionnées pour leur robustesse et leur allure.",
-        s_plants_price: 'EN BOUTIQUE',
-        s_events_title: 'Événements',
-        s_events_p: 'Mariages, anniversaires, ouvertures de boutique : décoration florale pensée sur-mesure.',
-        s_events_price: 'SUR RENDEZ-VOUS',
-        s_gifts_title: 'Coffrets & graines',
-        s_gifts_p: "Petites attentions à offrir : graines, engrais et accessoires pour prolonger le geste.",
-        s_gifts_price: 'IDÉE CADEAU',
-        gallery_eyebrow: 'Dans la boutique',
-        gallery_title: 'Un coin de couleur rue de l\'Ouest',
-        gallery_p: 'Notre mur jaune et son enseigne lumineuse sont devenus la signature du quartier — passez nous voir.',
-        gallery_note_eyebrow: 'Le geste Flower Bubble',
-        gallery_note_title: 'Fraîcheur d\'abord',
-        gallery_note_p: 'Nos arrivages sont choisis chaque semaine pour garantir des fleurs fraîches et des couleurs qui durent.',
-        visit_eyebrow: 'Infos pratiques',
-        visit_title: 'Venez nous rendre visite',
-        visit_addr_title: 'Adresse',
-        visit_addr_text: "57 Rue de l'Ouest, 75014 Paris, France",
-        visit_phone_title: 'Téléphone',
-        visit_phone_text: '+33 1 42 18 48 56',
-        visit_note_title: 'Bon à savoir',
-        visit_note_p: 'Boutique ouverte tous les jours de la semaine, y compris le week-end.',
-        hours_title: 'Horaires d\'ouverture',
-        d1: 'Lundi', d2: 'Mardi', d3: 'Mercredi', d4: 'Jeudi',
-        d5: 'Vendredi', d6: 'Samedi', d7: 'Dimanche',
-        cta_eyebrow: 'Une envie de fleurs ?',
-        cta_title: 'Composons ensemble <span class="highlight">votre</span> prochain bouquet',
-        cta_phone: '01 42 18 48 56',
-        cta_route: 'Itinéraire',
-        footer_boutique_h: 'Boutique',
-        footer_about_link: 'La boutique',
-        footer_services_link: 'Nos créations',
-        footer_gallery_link: 'Galerie',
-        footer_contact_h: 'Contact',
-        footer_addr: "57 Rue de l'Ouest, 75014 Paris",
-        footer_phone: '+33 1 42 18 48 56',
-        footer_hours_h: 'Horaires',
-        footer_hours_week: 'Lun – Ven : 10:00 – 20:00',
-        footer_hours_weekend: 'Sam : 9:30 – 20:00 · Dim : 9:30 – 18:00',
-        footer_copy: '© 2026 Flower Bubble — Paris 14e',
-        footer_note: 'Site réalisé avec soin, comme nos bouquets 🌸'
-      },
-      en: {
-        title: 'Flower Bubble — Florist, 14th Paris',
-        brand: 'Flower Bubble',
-        nav_about: 'The shop',
-        nav_services: 'Our creations',
-        nav_gallery: 'Gallery',
-        nav_visit: 'Practical info',
-        theme_light: 'Light',
-        theme_dark: 'Dark',
-        phone_cta: '01 42 18 48 56',
-        hero_eyebrow: 'Florist — 14th district, Paris',
-        hero_title: 'Fresh flowers, <span class="highlight">a bubble</span> of softness in your day.',
-        hero_p: 'Handcrafted bouquets, carefully selected plants, and a warm welcome on Rue de l\'Ouest. Flower Bubble dresses your celebrations and your everyday little moments.',
-        hero_btn_hours: 'See opening hours & address',
-        hero_btn_call: 'Call the shop',
-        about_eyebrow: 'Our story',
-        about_title: 'A neighborhood shop, imagined like a garden you visit every day',
-        about_p1: 'Flower Bubble is a shop in Paris\' 14th district, specializing in fresh flowers, plants, and elegant floral arrangements made for all occasions.',
-        about_p2: 'From classic roses to a surprising seasonal bloom, every bouquet is assembled by hand in our workshop, at 57 rue de l\'Ouest — for weddings, birthdays, or simply to bring a bit of nature to your home.',
-        services_eyebrow: 'What we offer',
-        services_title: 'Creations labeled with care',
-        s_bouquets_title: 'Bouquets',
-        s_bouquets_p: 'Round, rustic, or graphic compositions, made according to your tastes and budget.',
-        s_bouquets_price: 'ON QUOTE',
-        s_plants_title: 'Plants',
-        s_plants_p: 'Indoor and outdoor plants selected for their sturdiness and look.',
-        s_plants_price: 'IN-STORE',
-        s_events_title: 'Events',
-        s_events_p: 'Weddings, anniversaries, shop openings: floral décor designed to fit.',
-        s_events_price: 'BY APPOINTMENT',
-        s_gifts_title: 'Gift boxes & seeds',
-        s_gifts_p: 'Small thoughtful gifts: seeds, fertilizers, and accessories.',
-        s_gifts_price: 'GIFT IDEA',
-        gallery_eyebrow: 'Inside the shop',
-        gallery_title: 'A splash of color on Rue de l\'Ouest',
-        gallery_p: 'Our yellow wall and glowing sign became the neighborhood\'s signature — come by!',
-        gallery_note_eyebrow: 'The Flower Bubble gesture',
-        gallery_note_title: 'Freshness first',
-        gallery_note_p: 'Arrivals are picked every week to guarantee fresh flowers and lasting colors.',
-        visit_eyebrow: 'Practical info',
-        visit_title: 'Visit us',
-        visit_addr_title: 'Address',
-        visit_addr_text: '57 Rue de l\'Ouest, 75014 Paris, France',
-        visit_phone_title: 'Phone',
-        visit_phone_text: '+33 1 42 18 48 56',
-        visit_note_title: 'Good to know',
-        visit_note_p: 'Open every day of the week, including weekends.',
-        hours_title: 'Opening hours',
-        d1: 'Monday', d2: 'Tuesday', d3: 'Wednesday', d4: 'Thursday',
-        d5: 'Friday', d6: 'Saturday', d7: 'Sunday',
-        cta_eyebrow: 'Want some flowers?',
-        cta_title: 'Let\'s craft together <span class="highlight">your</span> next bouquet',
-        cta_phone: '01 42 18 48 56',
-        cta_route: 'Directions',
-        footer_boutique_h: 'Shop',
-        footer_about_link: 'The shop',
-        footer_services_link: 'Our creations',
-        footer_gallery_link: 'Gallery',
-        footer_contact_h: 'Contact',
-        footer_addr: '57 Rue de l\'Ouest, 75014 Paris',
-        footer_phone: '+33 1 42 18 48 56',
-        footer_hours_h: 'Hours',
-        footer_hours_week: 'Mon – Fri : 10:00 – 20:00',
-        footer_hours_weekend: 'Sat : 9:30 – 20:00 · Sun : 9:30 – 18:00',
-        footer_copy: '© 2026 Flower Bubble — Paris 14th',
-        footer_note: 'Made with care, like our bouquets 🌸'
-      },
-      ar: {
-        title: 'Flower Bubble — محل ورد, باريس 14',
-        brand: 'Flower Bubble',
-        nav_about: 'المتجر',
-        nav_services: 'إبداعاتنا',
-        nav_gallery: 'المعرض',
-        nav_visit: 'معلومات عملية',
-        theme_light: 'فاتح',
-        theme_dark: 'داكن',
-        phone_cta: '01 42 18 48 56',
-        hero_eyebrow: 'محل ورد — الدائرة 14, باريس',
-        hero_title: 'زهور طازجة، <span class="highlight">فقاعة</span> من اللطف في يومك.',
-        hero_p: 'باقة تُصنع يدوياً، نباتات مختارة بعناية، وترحيب دافئ في شارع ل\'ويست. Flower Bubble يزيّن احتفالاتك ولحظاتك الصغيرة اليومية.',
-        hero_btn_hours: 'عرض المواعيد والعنوان',
-        hero_btn_call: 'اتصل بالمحل',
-        about_eyebrow: 'قصتنا',
-        about_title: 'متجر حيّ، مُتصوَّر كحديقة تزورها كل يوم',
-        about_p1: 'Flower Bubble هو متجر في الدائرة 14 في باريس، متخصص في بيع الزهور والنباتات وترتيبات زهرية أنيقة وطازجة لكل المناسبات.',
-        about_p2: 'من الوردة الكلاسيكية إلى زهرة موسمية أكثر إثارة للدهشة، كل باقة تُركّب يدوياً في ورشتنا عند 57 شارع ل\'ويست — لزفافك، أعياد ميلادك، أو فقط لإحضار الطبيعة إلى منزلك.',
-        services_eyebrow: 'ما نقدمه',
-        services_title: 'إبداعات موسومة بعناية',
-        s_bouquets_title: 'الباقات',
-        s_bouquets_p: 'تركيبات دائرية أو ريفية أو بتصميمات عصرية، حسب ذوقك والميزانية.',
-        s_bouquets_price: 'حسب الطلب',
-        s_plants_title: 'النباتات',
-        s_plants_p: 'نباتات داخلية وخارجية مختارة لصلابتها ومظهرها.',
-        s_plants_price: 'متوفر داخل المتجر',
-        s_events_title: 'الفعاليات',
-        s_events_p: 'حفلات الزفاف، أعياد الميلاد، وافتتاح المتجر: ديكور زهرّي مُفصّل.',
-        s_events_price: 'بموعد مسبق',
-        s_gifts_title: 'علب الهدايا والبذور',
-        s_gifts_p: 'تفاصيل صغيرة تُهدي: بذور، سماد، وإكسسوارات.',
-        s_gifts_price: 'فكرة هدية',
-        gallery_eyebrow: 'داخل المتجر',
-        gallery_title: 'لمسة لون في شارع ل\'ويست',
-        gallery_p: 'جدارنا الأصفر ولافتتنا المضيئة أصبحت توقيع الحي — تعال وشاهد!',
-        gallery_note_eyebrow: 'لمسة Flower Bubble',
-        gallery_note_title: 'الأولوية للطزاجة',
-        gallery_note_p: 'يتم اختيار الواردات أسبوعياً لضمان زهور طازجة وألوان تدوم.',
-        visit_eyebrow: 'معلومات عملية',
-        visit_title: 'تفضل بزيارتنا',
-        visit_addr_title: 'العنوان',
-        visit_addr_text: '57 شارع ل\'ويست، 75014 باريس، فرنسا',
-        visit_phone_title: 'الهاتف',
-        visit_phone_text: '+33 1 42 18 48 56',
-        visit_note_title: 'معلومة مهمة',
-        visit_note_p: 'المحل مفتوح كل أيام الأسبوع بما في ذلك عطلات نهاية الأسبوع.',
-        hours_title: 'ساعات العمل',
-        d1: 'الاثنين', d2: 'الثلاثاء', d3: 'الأربعاء', d4: 'الخميس',
-        d5: 'الجمعة', d6: 'السبت', d7: 'الأحد',
-        cta_eyebrow: 'هل ترغب بالزهور؟',
-        cta_title: 'لنصنع معاً <span class="highlight">باقة</span> المرة القادمة',
-        cta_phone: '01 42 18 48 56',
-        cta_route: 'الاتجاهات',
-        footer_boutique_h: 'المتجر',
-        footer_about_link: 'المتجر',
-        footer_services_link: 'إبداعاتنا',
-        footer_gallery_link: 'المعرض',
-        footer_contact_h: 'تواصل',
-        footer_addr: '57 شارع ل\'ويست، 75014 باريس',
-        footer_phone: '+33 1 42 18 48 56',
-        footer_hours_h: 'المواعيد',
-        footer_hours_week: 'الاثنين – الجمعة : 10:00 – 20:00',
-        footer_hours_weekend: 'السبت : 9:30 – 20:00 · الأحد : 9:30 – 18:00',
-        footer_copy: '© 2026 Flower Bubble — باريس 14',
-        footer_note: 'مصنوع بعناية، مثل باقاتنا 🌸'
-      }
-    };
-
-    /* ---- i18n helpers ---- */
-    function currentLang() {
-      return document.documentElement.dataset.lang || 'fr';
-    }
-
-    function setText() {
-      const lang = currentLang();
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        const val = (i18n[lang] && i18n[lang][key]) ? i18n[lang][key] : null;
-        if (!val) return;
-        if (el.tagName === 'TITLE' || el.id === 'pageTitle') {
-          el.textContent = val;
-        } else {
-          el.innerHTML = val;
-        }
-      });
-    }
-
-    function applyDir() {
-      const html = document.documentElement;
-      html.dir = currentLang() === 'ar' ? 'rtl' : 'ltr';
-    }
-
-    function setLang(lang) {
-      document.documentElement.dataset.lang = lang;
-      document.documentElement.lang = lang === 'en' ? 'en' : lang === 'ar' ? 'ar' : 'fr';
-      localStorage.setItem(STORAGE_LANG, lang);
-      document.querySelectorAll('.lang-btn').forEach(b => {
-        const isCurrent = b.getAttribute('data-lang-set') === lang;
-        b.setAttribute('aria-current', isCurrent ? 'page' : 'false');
-      });
-      applyDir();
-      setText();
-      const marquee = document.querySelector('.marquee-track');
-      if (marquee && lang === 'ar') marquee.style.animationDirection = 'reverse';
-      else if (marquee) marquee.style.animationDirection = '';
-    }
-
-    /* ---- Theme ---- */
-    function applyTheme(theme) {
-      const html = document.documentElement;
-      const isDark = theme === 'dark';
-      html.classList.toggle('theme-dark', isDark);
-      localStorage.setItem(STORAGE_THEME, theme);
-      const btn = document.getElementById('themeToggle');
-      if (btn) btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-      updateThemeLabel(isDark);
-    }
-
-    function updateThemeLabel(isDark) {
-      const label = document.getElementById('themeLabel');
-      if (!label) return;
-      const lang = currentLang();
-      if (isDark) {
-        label.textContent = i18n[lang]?.theme_dark || 'Dark';
-      } else {
-        label.textContent = i18n[lang]?.theme_light || 'Light';
-      }
-    }
-
-    /* ---- Loading Screen ---- */
-    function hideLoader() {
-      const loader = document.getElementById('loader');
-      if (!loader) return;
-      loader.classList.add('hidden');
-      setTimeout(() => { loader.style.display = 'none'; }, 900);
-    }
-
-    /* ---- Floating Particles ---- */
-    function createParticles() {
-      if (prefersReducedMotion) return;
-      const container = document.getElementById('particlesContainer');
-      if (!container) return;
-      const petals = ['🌸', '🌺', '🌷', '🌹', '🪷', '🌼', '🌻'];
-      const count = isMobile ? 6 : 14;
-      for (let i = 0; i < count; i++) {
-        const el = document.createElement('span');
-        el.className = 'petal';
-        el.textContent = petals[i % petals.length];
-        el.style.left = Math.random() * 100 + '%';
-        el.style.fontSize = (12 + Math.random() * 16) + 'px';
-        el.style.animationDuration = (12 + Math.random() * 18) + 's';
-        el.style.animationDelay = (Math.random() * 20) + 's';
-        el.style.opacity = '0.3 + ' + (Math.random() * 0.4);
-        container.appendChild(el);
-      }
-    }
-
-    /* ---- Scroll Progress ---- */
-    function updateScrollProgress() {
-      const bar = document.getElementById('scrollProgressBar');
-      if (!bar) return;
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      bar.style.width = Math.min(progress, 100) + '%';
-    }
-
-    /* ---- Header scroll effect ---- */
-    function handleHeaderScroll() {
-      const header = document.getElementById('header');
-      if (!header) return;
-      header.classList.toggle('scrolled', window.scrollY > 20);
-    }
-
-    /* ---- Active nav link ---- */
-    function updateActiveNav() {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-link');
-      let current = '';
-      sections.forEach(section => {
-        const top = section.offsetTop - 150;
-        const bottom = top + section.offsetHeight;
-        if (window.scrollY >= top && window.scrollY < bottom) {
-          current = section.getAttribute('id');
-        }
-      });
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
-        }
-      });
-    }
-
-    /* ---- Custom Cursor ---- */
-    function initCursor() {
-      if (isTouch || prefersReducedMotion) return;
-      const ring = document.querySelector('.cursor-ring');
-      const dot = document.querySelector('.cursor-dot');
-      if (!ring || !dot) return;
-
-      let ringX = -100, ringY = -100;
-      let dotX = -100, dotY = -100;
-      let mouseX = -100, mouseY = -100;
-
-      document.addEventListener('mousemove', e => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-      });
-
-      // Hover effect on interactive elements
-      const interactives = 'a, button, .btn, .tag-card, .nav-cta, .brand, .lang-btn, .theme-btn';
-      document.addEventListener('mouseover', e => {
-        const target = e.target.closest(interactives);
-        document.body.classList.toggle('cursor-hover', !!target);
-      });
-
-      function animateCursor() {
-        ringX += (mouseX - ringX) * 0.12;
-        ringY += (mouseY - ringY) * 0.12;
-        dotX += (mouseX - dotX) * 0.3;
-        dotY += (mouseY - dotY) * 0.3;
-        ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
-        dot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0)`;
-        requestAnimationFrame(animateCursor);
-      }
-      animateCursor();
-
-      // Hide cursor when leaving window
-      document.addEventListener('mouseleave', () => {
-        ring.style.opacity = '0';
-        dot.style.opacity = '0';
-      });
-      document.addEventListener('mouseenter', () => {
-        ring.style.opacity = '0.9';
-        dot.style.opacity = '0.95';
-      });
-    }
-
-    /* ---- Scroll Reveal ---- */
-    function initScrollReveal() {
-      if (prefersReducedMotion) {
-        document.querySelectorAll('[data-reveal], [data-reveal-left], [data-reveal-right], [data-reveal-scale]')
-          .forEach(el => el.classList.add('is-in'));
-        return;
-      }
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.10, rootMargin: '0px 0px -8% 0px' });
-
-      document.querySelectorAll('[data-reveal], [data-reveal-left], [data-reveal-right], [data-reveal-scale]')
-        .forEach(el => observer.observe(el));
-    }
-
-    /* ---- Mobile Nav Toggle ---- */
-    function initMobileNav() {
-      const toggle = document.getElementById('navToggle');
-      const menu = document.getElementById('navLinks');
-      if (!toggle || !menu) return;
-
-      toggle.addEventListener('click', () => {
-        const isOpen = menu.classList.toggle('open');
-        toggle.classList.toggle('active', isOpen);
-        toggle.setAttribute('aria-expanded', isOpen);
-      });
-
-      // Close on link click
-      menu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          menu.classList.remove('open');
-          toggle.classList.remove('active');
-          toggle.setAttribute('aria-expanded', 'false');
-        });
-      });
-
-      // Close on outside click
-      document.addEventListener('click', (e) => {
-        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-          menu.classList.remove('open');
-          toggle.classList.remove('active');
-          toggle.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
-
-    /* ---- Highlight today in hours ---- */
-    function highlightToday() {
-      const today = new Date().getDay(); // 0=Sun, 1=Mon...
-      const rows = document.querySelectorAll('.hours-table tr');
-      // rows are Mon(1) to Sun(0), so adjust index
-      const dayIndex = today === 0 ? 6 : today - 1;
-      if (rows[dayIndex]) rows[dayIndex].classList.add('today');
-    }
-
-    /* ========================== BOOT ========================== */
-    document.addEventListener('DOMContentLoaded', () => {
-
-      // Language
-      const savedLang = localStorage.getItem(STORAGE_LANG);
-      setLang(savedLang || 'fr');
-
-      // Theme
-      const savedTheme = localStorage.getItem(STORAGE_THEME);
-      applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
-
-      // Init
-      createParticles();
-      initCursor();
-      initScrollReveal();
-      initMobileNav();
-      highlightToday();
-
-      // Scroll events
-      window.addEventListener('scroll', () => {
-        updateScrollProgress();
-        handleHeaderScroll();
-        updateActiveNav();
-      }, { passive: true });
-
-      // Initial scroll state
-      handleHeaderScroll();
-      updateActiveNav();
-
-      // Hide loader after fonts/site ready
-      window.addEventListener('load', () => {
-        setTimeout(hideLoader, 600);
-      });
-
-      // Fallback: hide loader after 3s max
-      setTimeout(hideLoader, 3000);
-
-      // Lang buttons
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const lang = btn.getAttribute('data-lang-set');
-          setLang(lang);
-          updateThemeLabel(document.getElementById('themeToggle')?.getAttribute('aria-pressed') === 'true');
-        });
-      });
-
-      // Theme toggle
-      const themeBtn = document.getElementById('themeToggle');
-      if (themeBtn) {
-        themeBtn.addEventListener('click', () => {
-          const current = localStorage.getItem(STORAGE_THEME) || 'light';
-          const next = current === 'dark' ? 'light' : 'dark';
-          applyTheme(next);
-        });
-      }
-    });
-
-  })();
-  </script>
-
+<div class="loader" id="loader"><div class="loader-spin"></div><div class="loader-bar"><div class="loader-fill"></div></div></div>
+<div class="scroll-bar"><div class="scroll-fill" id="sFill"></div></div>
+<div class="grain"></div>
+<div class="petals" id="petals"></div>
+<div class="cursor-r"></div><div class="cursor-d"></div>
+
+<div class="lb2" id="lb">
+<button class="cl" id="lbCl">&times;</button>
+<img id="lbImg" src="" alt="">
+</div>
+
+<a href="https://wa.me/33142184856?text=Bonjour%20Flower%20Bubble%20!" target="_blank" rel="noopener" class="wa">💬</a>
+<button class="btt" id="btt">↑</button>
+
+<header id="hdr">
+<div class="nav">
+<a href="#top" class="brand">
+<span class="brand-m">FB</span>
+<span class="brand-t">
+<span class="brand-n" data-i18n="brand">Flower Bubble</span>
+<span class="brand-s">Fleuriste · Paris 14e</span>
+</span>
+</a>
+<ul class="nav-l" id="navL">
+<li><a href="#about" data-i18n="nav_about">La boutique</a></li>
+<li><a href="#services" data-i18n="nav_services">Nos créations</a></li>
+<li><a href="#testimonials" data-i18n="nav_testi">Avis</a></li>
+<li><a href="#gallery" data-i18n="nav_gallery">Galerie</a></li>
+<li><a href="#visit" data-i18n="nav_visit">Infos pratiques</a></li>
+</ul>
+<div class="hr">
+<div class="hc">
+<button class="tb" id="tT"><span id="tL">Light</span></button>
+<div class="ls">
+<button class="lb" data-lang="fr">FR</button>
+<button class="lb" data-lang="en">EN</button>
+<button class="lb" data-lang="ar">AR</button>
+</div>
+</div>
+<a href="tel:+33142184856" class="cta-h">📞 01 42 18 48 56</a>
+<button class="nt" id="nT"><span></span><span></span><span></span></button>
+</div>
+</div>
+</header>
+
+<main id="top">
+<section class="hero">
+<div class="hg">
+<div class="hc2">
+<span class="eyebrow" data-i18n="hero_eyebrow">Fleuriste — 14e arrondissement, Paris</span>
+<h1 data-i18n="hero_title">Des fleurs fraîches, <span class="h">une bulle</span> de douceur.</h1>
+<p data-i18n="hero_p">Bouquets composés à la main, plantes choisies avec soin, et un accueil chaleureux rue de l'Ouest.</p>
+<div class="ha">
+<a href="#visit" class="btn btn-p" data-i18n="hero_btn_hours">📍 Voir les horaires</a>
+<a href="tel:+33142184856" class="btn btn-g" data-i18n="hero_btn_call">📞 Appeler</a>
+</div>
+</div>
+<div class="hv">
+<div class="hb"></div>
+<div class="hp"><img src="shop.jpg" alt="Boutique"></div>
+<div class="hbadge">💐</div>
+<div class="ht2"><span class="dot"></span><span>Compositions renouvelées chaque semaine</span></div>
+</div>
+</div>
+</section>
+
+<div class="mq"><div class="mq-t">
+<span>Fleurs fraîches</span><span class="sep"></span><span>Bouquets sur-mesure</span><span class="sep"></span><span>Plantes d'intérieur</span><span class="sep"></span><span>Livraison locale</span><span class="sep"></span><span>Ouvert 7j/7</span><span class="sep"></span>
+<span>Fleurs fraîches</span><span class="sep"></span><span>Bouquets sur-mesure</span><span class="sep"></span><span>Plantes d'intérieur</span><span class="sep"></span><span>Livraison locale</span><span class="sep"></span><span>Ouvert 7j/7</span>
+</div></div>
+
+<section class="about r" id="about">
+<div class="wrap ag">
+<div class="am rl">
+<div class="iw"><img src="logo.jpg" alt="Logo"></div>
+<div class="badge">DEPUIS<br>2022</div>
+</div>
+<div class="at rr">
+<span class="eyebrow" data-i18n="about_eyebrow">Notre histoire</span>
+<h2 data-i18n="about_title">Une boutique de quartier, pensée comme un jardin</h2>
+<p data-i18n="about_p1">Flower Bubble est une boutique du 14e arrondissement de Paris.</p>
+<p data-i18n="about_p2">Chaque bouquet est assemblé à la main dans notre atelier, au 57 rue de l'Ouest.</p>
+<div class="as">
+<div><strong class="cnt" data-target="100">0</strong><span>% fait main</span></div>
+<div><strong class="cnt" data-target="7">0</strong><span>Jours/7 ouverts</span></div>
+<div><strong class="cnt" data-target="14">0</strong><span>e arrondissement</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sv r" id="services">
+<div class="wrap">
+<div class="sh">
+<span class="eyebrow" data-i18n="services_eyebrow">Ce que nous proposons</span>
+<h2 data-i18n="services_title">Nos créations, étiquetées avec soin</h2>
+</div>
+<div class="tr">
+<div class="tc rs"><div class="gl"></div><div class="th"></div><span class="ti">💐</span><h3 data-i18n="s_bouquets_title">Bouquets</h3><p data-i18n="s_bouquets_p">Sur mesure</p><span class="tpr" data-i18n="s_bouquets_price">SUR DEVIS</span></div>
+<div class="tc rs"><div class="gl"></div><div class="th"></div><span class="ti">🌿</span><h3 data-i18n="s_plants_title">Plantes</h3><p data-i18n="s_plants_p">Robustes</p><span class="tpr" data-i18n="s_plants_price">EN BOUTIQUE</span></div>
+<div class="tc rs"><div class="gl"></div><div class="th"></div><span class="ti">🤍</span><h3 data-i18n="s_events_title">Événements</h3><p data-i18n="s_events_p">Sur-mesure</p><span class="tpr" data-i18n="s_events_price">RENDEZ-VOUS</span></div>
+<div class="tc rs"><div class="gl"></div><div class="th"></div><span class="ti">🎁</span><h3 data-i18n="s_gifts_title">Coffrets</h3><p data-i18n="s_gifts_p">Cadeaux</p><span class="tpr" data-i18n="s_gifts_price">IDÉE</span></div>
+</div>
+</div>
+</section>
+
+<section class="tm r" id="testimonials">
+<div class="wrap">
+<div class="tmh">
+<span class="eyebrow" data-i18n="testi_eyebrow">Témoignages</span>
+<h2 data-i18n="testi_title">Ce que disent nos clients</h2>
+</div>
+<div class="tmt-w" style="position:relative;overflow:hidden">
+<div class="tmt" id="tmt">
+<div class="tms"><div class="tmc"><div class="tmav">👩</div><div class="tms2">★★★★★</div><p class="tmt2" data-i18n="testi_1">"Les plus beaux bouquets !"</p><div class="tma">Sophie M.<span>Cliente fidèle</span></div></div></div>
+<div class="tms"><div class="tmc"><div class="tmav">👨</div><div class="tms2">★★★★★</div><p class="tmt2" data-i18n="testi_2">"Les fleurs ont tenu 1 semaine !"</p><div class="tma">Thomas L.<span>Client 2023</span></div></div></div>
+<div class="tms"><div class="tmc"><div class="tmav">👩‍🦰</div><div class="tms2">★★★★★</div><p class="tmt2" data-i18n="testi_3">"Mon fleuriste de quartier !"</p><div class="tma">Camille R.<span>Cliente 2024</span></div></div></div>
+<div class="tms"><div class="tmc"><div class="tmav">👨‍🦱</div><div class="tms2">★★★★★</div><p class="tmt2" data-i18n="testi_4">"Mariage exceptionnel !"</p><div class="tma">Alexandre & Julie<span>Mariés 2025</span></div></div></div>
+</div>
+</div>
+<div class="cc">
+<button class="cb" id="prevT">‹</button>
+<div class="cd" id="tDots"><span class="on"></span><span></span><span></span><span></span></div>
+<button class="cb" id="nextT">›</button>
+</div>
+</div>
+</section>
+
+<section class="gal r" id="gallery">
+<div class="wrap">
+<div class="gh">
+<div><span class="eyebrow" data-i18n="gal_eyebrow">Dans la boutique</span><h2 data-i18n="gal_title">Un coin de couleur rue de l'Ouest</h2></div>
+<p data-i18n="gal_p">Notre mur jaune et son enseigne lumineuse sont devenus la signature du quartier.</p>
+</div>
+<div class="gg">
+<div class="gm rl"><img src="shop.jpg" alt="Boutique" onclick="openLB('shop.jpg')"></div>
+<div class="gs">
+<div class="gl2 rs"><img src="logo.jpg" alt="Logo" onclick="openLB('logo.jpg')"></div>
+<div class="gn rr">
+<span class="eyebrow" data-i18n="gal_note_eyebrow">Le geste</span>
+<h3 data-i18n="gal_note_title">Fraîcheur d'abord</h3>
+<p data-i18n="gal_note_p">Nos arrivages sont choisis chaque semaine.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="visit r" id="visit">
+<div class="wrap vg">
+<div>
+<span class="eyebrow" data-i18n="visit_eyebrow">Infos pratiques</span>
+<h2 data-i18n="visit_title">Venez nous rendre visite</h2>
+<div class="vi">
+<div class="vr"><span class="icon">📍</span><div><h4 data-i18n="visit_addr_title">Adresse</h4><a href="https://maps.google.com/?q=57+Rue+de+l%27Ouest+75014+Paris" target="_blank" data-i18n="visit_addr_text">57 Rue de l'Ouest, 75014 Paris</a></div></div>
+<div class="vr"><span class="icon">📞</span><div><h4 data-i18n="visit_phone_title">Téléphone</h4><a href="tel:+33142184856" data-i18n="visit_phone_text">+33 1 42 18 48 56</a></div></div>
+<div class="vr"><span class="icon">✦</span><div><h4 data-i18n="visit_note_title">Bon à savoir</h4><p data-i18n="visit_note_p">Ouvert tous les jours.</p></div></div>
+</div>
+<div class="mc"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2626!2d2.315!3d48.831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671!2zNTcgUnVlIGRlIGwnT3Vlc3Q!5e0!3m2!1sfr!2sfr!4v1" loading="lazy"></iframe></div>
+</div>
+<div class="hc3 rs">
+<h3><span class="dot"></span> <span data-i18n="hours_title">Horaires d'ouverture</span></h3>
+<table class="ht3">
+<tr><td data-i18n="d1">Lundi</td><td>10:00 – 20:00</td></tr>
+<tr><td data-i18n="d2">Mardi</td><td>10:00 – 20:00</td></tr>
+<tr><td data-i18n="d3">Mercredi</td><td>10:00 – 20:00</td></tr>
+<tr><td data-i18n="d4">Jeudi</td><td>10:00 – 20:00</td></tr>
+<tr><td data-i18n="d5">Vendredi</td><td>10:00 – 20:00</td></tr>
+<tr><td data-i18n="d6">Samedi</td><td>9:30 – 20:00</td></tr>
+<tr><td data-i18n="d7">Dimanche</td><td>9:30 – 18:00</td></tr>
+</table>
+</div>
+</div>
+</section>
+
+<section class="cta r">
+<div class="wrap">
+<span class="eyebrow" data-i18n="cta_eyebrow">Une envie de fleurs ?</span>
+<h2 data-i18n="cta_title">Composons ensemble <span class="h">votre</span> prochain bouquet</h2>
+<div class="ca">
+<a href="tel:+33142184856" class="btn btn-p" data-i18n="cta_phone">📞 01 42 18 48 56</a>
+<a href="https://maps.google.com/?q=57+Rue+de+l%27Ouest+75014+Paris" target="_blank" class="btn btn-g" data-i18n="cta_route">📍 Itinéraire</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="ft">
+<a href="#top" class="fb2"><span class="brand-m">FB</span><span class="brand-n" data-i18n="brand">Flower Bubble</span></a>
+<div class="fl">
+<div><h5 data-i18n="foot_boutique">Boutique</h5><a href="#about" data-i18n="foot_about">La boutique</a><a href="#services" data-i18n="foot_services">Nos créations</a><a href="#gallery" data-i18n="foot_gallery">Galerie</a></div>
+<div><h5 data-i18n="foot_contact">Contact</h5><p data-i18n="foot_addr">57 Rue de l'Ouest, 75014 Paris</p><a href="tel:+33142184856" data-i18n="foot_phone">+33 1 42 18 48 56</a></div>
+<div><h5 data-i18n="foot_hours">Horaires</h5><p data-i18n="foot_hours_week">Lun – Ven : 10:00 – 20:00</p><p data-i18n="foot_hours_weekend">Sam : 9:30 – 20:00 · Dim : 9:30 – 18:00</p></div>
+</div>
+</div>
+<div class="fb3">
+<span data-i18n="foot_copy">© 2026 Flower Bubble — Paris 14e</span>
+<span data-i18n="foot_note">Site réalisé avec soin 🌸</span>
+</div>
+</div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+const SL='fb_lang', ST='fb_theme';
+const rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const pd=window.matchMedia('(prefers-color-scheme: dark)').matches;
+const mb=window.matchMedia('(max-width: 768px)').matches;
+const tc=window.matchMedia('(pointer: coarse)').matches;
+
+const i18n={fr:{title:'Flower Bubble — Fleuriste, 14e Paris',brand:'Flower Bubble',nav_about:'La boutique',nav_services:'Nos créations',nav_testi:'Avis',nav_gallery:'Galerie',nav_visit:'Infos',hero_eyebrow:'Fleuriste — 14e',hero_title:'Des fleurs fraîches, <span class="h">une bulle</span> de douceur.',hero_p:'Bouquets composés à la main.',hero_btn_hours:'📍 Horaires',hero_btn_call:'📞 Appeler',about_eyebrow:'Notre histoire',about_title:'Une boutique de quartier',about_p1:'Flower Bubble est une boutique du 14e.',about_p2:'Chaque bouquet est assemblé à la main.',services_eyebrow:'Nos offres',services_title:'Nos créations',s_bouquets_title:'Bouquets',s_bouquets_p:'Sur mesure',s_bouquets_price:'SUR DEVIS',s_plants_title:'Plantes',s_plants_p:'Robustes',s_plants_price:'EN BOUTIQUE',s_events_title:'Événements',s_events_p:'Sur-mesure',s_events_price:'RENDEZ-VOUS',s_gifts_title:'Coffrets',s_gifts_p:'Cadeaux',s_gifts_price:'IDÉE',testi_eyebrow:'Avis',testi_title:'Ce que disent nos clients',testi_1:'"Les plus beaux bouquets !"',testi_2:'"Les fleurs ont tenu 1 semaine !"',testi_3:'"Mon fleuriste de quartier !"',testi_4:'"Mariage exceptionnel !"',gal_eyebrow:'Boutique',gal_title:'Coin de couleur',gal_p:'Notre mur jaune.',gal_note_eyebrow:'Le geste',gal_note_title:'Fraîcheur',gal_note_p:'Arrivages chaque semaine.',visit_eyebrow:'Infos',visit_title:'Visitez-nous',visit_addr_title:'Adresse',visit_addr_text:'57 Rue de l\'Ouest, 75014 Paris',visit_phone_title:'Téléphone',visit_phone_text:'+33 1 42 18 48 56',visit_note_title:'Bon à savoir',visit_note_p:'Ouvert tous les jours.',hours_title:'Horaires',d1:'Lundi',d2:'Mardi',d3:'Mercredi',d4:'Jeudi',d5:'Vendredi',d6:'Samedi',d7:'Dimanche',cta_eyebrow:'Envie de fleurs?',cta_title:'Composons <span class="h">votre</span> bouquet',cta_phone:'📞 01 42 18 48 56',cta_route:'📍 Itinéraire',foot_boutique:'Boutique',foot_about:'La boutique',foot_services:'Créations',foot_gallery:'Galerie',foot_contact:'Contact',foot_addr:'57 Rue de l\'Ouest, 75014 Paris',foot_phone:'+33 1 42 18 48 56',foot_hours:'Horaires',foot_hours_week:'Lun-Ven: 10h-20h',foot_hours_weekend:'Sam: 9h30-20h · Dim: 9h30-18h',foot_copy:'© 2026 Flower Bubble — Paris 14e',foot_note:'🌸'},
+en:{title:'Flower Bubble — Florist, 14th Paris',brand:'Flower Bubble',nav_about:'Shop',nav_services:'Creations',nav_testi:'Reviews',nav_gallery:'Gallery',nav_visit:'Info',hero_eyebrow:'Florist — 14th',hero_title:'Fresh flowers, <span class="h">a bubble</span> of softness.',hero_p:'Handcrafted bouquets.',hero_btn_hours:'📍 Hours',hero_btn_call:'📞 Call',about_eyebrow:'Our story',about_title:'A neighborhood shop',about_p1:'Flower Bubble in Paris 14th.',about_p2:'Hand-assembled bouquets.',services_eyebrow:'Our offers',services_title:'Our creations',s_bouquets_title:'Bouquets',s_bouquets_p:'Custom',s_bouquets_price:'QUOTE',s_plants_title:'Plants',s_plants_p:'Sturdy',s_plants_price:'IN-STORE',s_events_title:'Events',s_events_p:'Bespoke',s_events_price:'APPOINTMENT',s_gifts_title:'Gifts',s_gifts_p:'Presents',s_gifts_price:'GIFT',testi_eyebrow:'Reviews',testi_title:'What clients say',testi_1:'"Best bouquets!"',testi_2:'"Lasted 1 week!"',testi_3:'"My florist!"',testi_4:'"Amazing wedding!"',gal_eyebrow:'Shop',gal_title:'Splash of color',gal_p:'Our yellow wall.',gal_note_eyebrow:'Touch',gal_note_title:'Freshness',gal_note_p:'Weekly arrivals.',visit_eyebrow:'Info',visit_title:'Visit us',visit_addr_title:'Address',visit_addr_text:'57 Rue de l\'Ouest, 75014 Paris',visit_phone_title:'Phone',visit_phone_text:'+33 1 42 18 48 56',visit_note_title:'Good to know',visit_note_p:'Open daily.',hours_title:'Hours',d1:'Monday',d2:'Tuesday',d3:'Wednesday',d4:'Thursday',d5:'Friday',d6:'Saturday',d7:'Sunday',cta_eyebrow:'Want flowers?',cta_title:'Craft <span class="h">your</span> bouquet',cta_phone:'📞 01 42 18 48 56',cta_route:'📍 Directions',foot_boutique:'Shop',foot_about:'Shop',foot_services:'Creations',foot_gallery:'Gallery',foot_contact:'Contact',foot_addr:'57 Rue de l\'Ouest, 75014 Paris',foot_phone:'+33 1 42 18 48 56',foot_hours:'Hours',foot_hours_week:'Mon-Fri: 10am-8pm',foot_hours_weekend:'Sat: 9:30am-8pm · Sun: 9:30am-6pm',foot_copy:'© 2026 Flower Bubble — Paris 14th',foot_note:'🌸'},
+ar:{title:'Flower Bubble — محل ورد, باريس 14',brand:'Flower Bubble',nav_about:'المتجر',nav_services:'إبداعاتنا',nav_testi:'آراء',nav_gallery:'المعرض',nav_visit:'معلومات',hero_eyebrow:'محل ورد — 14',hero_title:'زهور طازجة، <span class="h">فقاعة</span> من اللطف.',hero_p:'باقات يدوية.',hero_btn_hours:'📍 المواعيد',hero_btn_call:'📞 اتصال',about_eyebrow:'قصتنا',about_title:'متجر حي',about_p1:'Flower Bubble في باريس 14.',about_p2:'باقات يدوية.',services_eyebrow:'عروضنا',services_title:'إبداعاتنا',s_bouquets_title:'باقات',s_bouquets_p:'حسب الطلب',s_bouquets_price:'سعر',s_plants_title:'نباتات',s_plants_p:'قوية',s_plants_price:'في المتجر',s_events_title:'مناسبات',s_events_p:'ديكور',s_events_price:'موعد',s_gifts_title:'هدايا',s_gifts_p:'أفكار',s_gifts_price:'هدية',testi_eyebrow:'آراء',testi_title:'ماذا يقول العملاء',testi_1:'"أجمل الباقات!"',testi_2:'"استمرت أسبوعاً!"',testi_3:'"محل الورود!"',testi_4:'"زفاف رائع!"',gal_eyebrow:'المتجر',gal_title:'لمسة لون',gal_p:'جدارنا الأصفر.',gal_note_eyebrow:'لمسة',gal_note_title:'طزاجة',gal_note_p:'واردات أسبوعية.',visit_eyebrow:'معلومات',visit_title:'زورونا',visit_addr_title:'العنوان',visit_addr_text:'57 شارع ل\'ويست، 75014 باريس',visit_phone_title:'الهاتف',visit_phone_text:'+33 1 42 18 48 56',visit_note_title:'معلومة',visit_note_p:'مفتوح يومياً.',hours_title:'ساعات العمل',d1:'الاثنين',d2:'الثلاثاء',d3:'الأربعاء',d4:'الخميس',d5:'الجمعة',d6:'السبت',d7:'الأحد',cta_eyebrow:'زهور؟',cta_title:'لنصنع <span class="h">باقة</span>',cta_phone:'📞 01 42 18 48 56',cta_route:'📍 الاتجاهات',foot_boutique:'المتجر',foot_about:'المتجر',foot_services:'إبداعات',foot_gallery:'معرض',foot_contact:'تواصل',foot_addr:'57 شارع ل\'ويست، 75014 باريس',foot_phone:'+33 1 42 18 48 56',foot_hours:'المواعيد',foot_hours_week:'الاثنين-الجمعة: 10-20',foot_hours_weekend:'السبت: 9:30-20 · الأحد: 9:30-18',foot_copy:'© 2026 Flower Bubble — باريس 14',foot_note:'🌸'}};
+
+function cl(){return document.documentElement.dataset.lang||'fr'}
+function st(){
+const l=cl();
+document.querySelectorAll('[data-i18n]').forEach(el=>{
+const k=el.getAttribute('data-i18n'),v=i18n[l]&&i18n[l][k]?i18n[l][k]:null;
+if(!v)return;
+if(el.tagName==='TITLE'||el.id==='pageTitle')el.textContent=v;
+else el.innerHTML=v;
+});
+}
+function ad(){document.documentElement.dir=cl()==='ar'?'rtl':'ltr'}
+function sl(l){
+document.documentElement.dataset.lang=l;
+document.documentElement.lang=l;
+localStorage.setItem(SL,l);
+document.querySelectorAll('.lb').forEach(b=>b.setAttribute('aria-current',b.dataset.lang===l?'page':'false'));
+ad();st();
+const m=document.querySelector('.mq-t');
+if(m&&l==='ar')m.style.animationDirection='reverse';
+else if(m)m.style.animationDirection='';
+}
+function at(t){
+const d=t==='dark';
+document.documentElement.classList.toggle('theme-dark',d);
+localStorage.setItem(ST,t);
+document.getElementById('tT').setAttribute('aria-pressed',d);
+const lb=document.getElementById('tL');
+if(lb)lb.textContent=d?i18n[cl()]?.theme_dark||'Dark':i18n[cl()]?.theme_light||'Light';
+}
+function hl(){const l=document.getElementById('loader');if(l){l.classList.add('hidden');setTimeout(()=>l.style.display='none',900)}}
+function cp(){
+if(rm||!document.getElementById('petals'))return;
+const p=document.getElementById('petals'),e=['🌸','🌺','🌷','🌹','🌼','🌻'],c=mb?6:14;
+for(let i=0;i<c;i++){
+const el=document.createElement('span');
+el.className='petal';
+el.textContent=e[i%e.length];
+el.style.left=Math.random()*100+'%';
+el.style.fontSize=(12+Math.random()*16)+'px';
+el.style.animationDuration=(12+Math.random()*18)+'s';
+el.style.animationDelay=(Math.random()*20)+'s';
+p.appendChild(el);
+}
+}
+function usp(){const b=document.getElementById('sFill');if(!b)return;const s=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;b.style.width=(h>0?Math.min(s/h*100,100):0)+'%'}
+function hhs(){const h=document.getElementById('hdr');if(h)h.classList.toggle('scrolled',window.scrollY>20)}
+function uan(){
+const s=document.querySelectorAll('section[id]'),l=document.querySelectorAll('.nav-l a');
+let c='';
+s.forEach(se=>{const t=se.offsetTop-150;if(window.scrollY>=t&&window.scrollY<t+se.offsetHeight)c=se.id});
+l.forEach(link=>{link.classList.remove('on');if(link.getAttribute('href')==='#'+c)link.classList.add('on')});
+}
+function ic(){
+if(tc||rm)return;
+const r=document.querySelector('.cursor-r'),d=document.querySelector('.cursor-d');
+if(!r||!d)return;
+let rx=-100,ry=-100,dx=-100,dy=-100,mx=-100,my=-100;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+document.addEventListener('mouseover',e=>{document.body.classList.toggle('ch',!!e.target.closest('a,button,.btn'))});
+function a(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;dx+=(mx-dx)*0.3;dy+=(my-dy)*0.3;r.style.transform=`translate3d(${rx}px,${ry}px,0)`;d.style.transform=`translate3d(${dx}px,${dy}px,0)`;requestAnimationFrame(a)}
+a();
+document.addEventListener('mouseleave',()=>{r.style.opacity='0';d.style.opacity='0'});
+document.addEventListener('mouseenter',()=>{r.style.opacity='.9';d.style.opacity='.95'});
+}
+function isr(){
+if(rm){document.querySelectorAll('.r,.rl,.rr,.rs').forEach(e=>e.classList.add('vis'));return}
+const o=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){en.target.classList.add('vis');o.unobserve(en.target)}})},{threshold:.1});
+document.querySelectorAll('.r,.rl,.rr,.rs').forEach(e=>o.observe(e));
+}
+function imn(){
+const t=document.getElementById('nT'),m=document.getElementById('navL');
+if(!t||!m)return;
+t.addEventListener('click',()=>{const o=m.classList.toggle('open');t.classList.toggle('on',o);t.setAttribute('aria-expanded',o)});
+m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.remove('open');t.classList.remove('on')}));
+document.addEventListener('click',e=>{if(!m.contains(e.target)&&!t.contains(e.target)){m.classList.remove('open');t.classList.remove('on')}});
+}
+function ht(){
+const t=new Date().getDay(),i=t===0?6:t-1;
+const r=document.querySelectorAll('.ht3 tr');
+if(r[i])r[i].classList.add('today');
+}
+function inc(){
+if(rm)return;
+const c=document.querySelectorAll('.cnt');
+if(!c.length)return;
+const o=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){
+const el=en.target,t=parseInt(el.dataset.target,10),s=el.dataset.suffix||'',d=1500,st=performance.now();
+function u(ct){const p=Math.min((ct-st)/d,1),e=p===1?1:1-Math.pow(2,-10*p),cur=Math.round(e*t);el.textContent=cur+s;if(p<1)requestAnimationFrame(u)}
+requestAnimationFrame(u);o.unobserve(el)
+}})});
+c.forEach(e=>o.observe(e));
+}
+function initLB(){
+const lb=document.getElementById('lb'),c=document.getElementById('lbCl');
+if(!lb||!c)return;
+c.addEventListener('click',()=>{lb.classList.remove('on');document.body.style.overflow=''});
+lb.addEventListener('click',e=>{if(e.target===lb){lb.classList.remove('on');document.body.style.overflow=''}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&lb.classList.contains('on')){lb.classList.remove('on');document.body.style.overflow=''}});
+}
+window.openLB=function(s){const lb=document.getElementById('lb'),img=document.getElementById('lbImg');if(!lb||!img)return;img.src=s;lb.classList.add('on');document.body.style.overflow='hidden'};
+function initCar(){
+const t=document.getElementById('tmt'),d=document.querySelectorAll('#tDots span'),p=document.getElementById('prevT'),n=document.getElementById('nextT');
+if(!t)return;let cur=0,tot=d.length,interval;
+function go(i){if(i<0)i=tot-1;if(i>=tot)i=0;cur=i;t.style.transform=`translateX(-${cur*100}%)`;d.forEach((dt,idx)=>dt.classList.toggle('on',idx===cur))}
+if(p)p.addEventListener('click',()=>go(cur-1));
+if(n)n.addEventListener('click',()=>go(cur+1));
+d.forEach((dt,i)=>dt.addEventListener('click',()=>go(i)));
+if(!rm){interval=setInterval(()=>go(cur+1),5000);const w=t.parentElement;w.addEventListener('mouseenter',()=>clearInterval(interval));w.addEventListener('mouseleave',()=>{interval=setInterval(()=>go(cur+1),5000)})}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')go(cur-1);if(e.key==='ArrowRight')go(cur+1)});
+}
+function ibt(){
+const b=document.getElementById('btt');
+if(!b)return;
+window.addEventListener('scroll',()=>b.classList.toggle('vis',window.scrollY>300),{passive:true});
+b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+}
+document.addEventListener('DOMContentLoaded',()=>{
+sl(localStorage.getItem(SL)||'fr');
+at(localStorage.getItem(ST)||(pd?'dark':'light'));
+cp();ic();isr();imn();ht();inc();initLB();initCar();ibt();
+window.addEventListener('scroll',()=>{usp();hhs();uan()},{passive:true});
+hhs();uan();
+window.addEventListener('load',()=>setTimeout(hl,600));
+setTimeout(hl,3000);
+document.querySelectorAll('.lb').forEach(b=>b.addEventListener('click',()=>{const l=b.dataset.lang;sl(l);const d=document.getElementById('tT').getAttribute('aria-pressed')==='true';document.getElementById('tL').textContent=d?i18n[l]?.theme_dark||'Dark':i18n[l]?.theme_light||'Light'}));
+document.getElementById('tT').addEventListener('click',()=>{const c=localStorage.getItem(ST)||'light';at(c==='dark'?'light':'dark')});
+});
+})();
+</script>
 </body>
 </html>
